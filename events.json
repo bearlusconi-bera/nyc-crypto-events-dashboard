@@ -136,25 +136,6 @@
       "dismissedAt": null
     },
     {
-      "id": "bocconi-pianificare-2026-06-22",
-      "name": "Bocconi Alumni: Pianificare in condizioni di incertezza (virtual)",
-      "start": "2026-06-22",
-      "end": "2026-06-22",
-      "time": "6:15 PM CEST",
-      "dayOfWeek": "Mon",
-      "venue": "Milano | Online (virtual-accessible from NYC)",
-      "category": "bocconi",
-      "source": "Bocconi Alumni Italy",
-      "link": "https://www.bocconialumni.it/permalink/content/pianificare-in-condizioni-di-incertezza",
-      "description": "Planning amid geopolitical/regulatory volatility. Italy chapter, streamed online.",
-      "cost": "Not specified",
-      "highSignal": false,
-      "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
-      "dismissed": false,
-      "dismissedAt": null
-    },
-    {
       "id": "tokenizethis-2026-06-23",
       "name": "TokenizeThis 2026",
       "start": "2026-06-23",
