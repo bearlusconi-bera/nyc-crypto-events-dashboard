@@ -10,6 +10,10 @@ A self-updating dashboard of NYC crypto/web3, Bocconi, and AI events. Hosted on 
 - **`index.html`** — a single-file dashboard (vanilla JS, no build). It buckets events into **This Week / Next Week / Upcoming / Past** relative to today, with category filters, search, and per-event removal.
 - **Weekly auto-feed** — the PAI scheduled task `weekly-nyc-crypto-bocconi-events` re-scans the sources each week and **merges** new events into `events.json` (preserving `dismissed` flags), then commits. Removed events stay removed even if they re-appear in a later scan.
 
+## Saving events ("I'll go")
+
+Click **✓ I'll go** on any card to file it into your **going list** and hide it from the main view (so you stop seeing events you've already decided on). Open the list with the **★ My going list** toggle; remove an event from it with **↩ Not going**. Like removals, the going list is committed back to `events.json` when a token is configured (and the weekly job preserves it).
+
 ## Removing events ("not interesting")
 
 Click **✕ Not interesting** on any card.

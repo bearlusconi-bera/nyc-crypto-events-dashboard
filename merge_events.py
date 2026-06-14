@@ -16,9 +16,10 @@ Merge rules:
     date), so the same event re-scraped next week updates in place.
   * On match: mutable fields (time, venue, link, description, cost, end,
     dayOfWeek, highSignal, source, category) are refreshed and lastSeen is
-    bumped. firstSeen, dismissed, dismissedAt are PRESERVED — a removed event
-    stays removed even if it re-appears.
-  * New events get firstSeen = lastSeen = run date, dismissed = false.
+    bumped. firstSeen, dismissed, dismissedAt, going, goingAt are PRESERVED —
+    a removed event stays removed and a saved ("going") event stays saved even
+    if it re-appears.
+  * New events get firstSeen = lastSeen = run date, dismissed/going = false.
   * Existing events not seen this run are kept untouched (history is never
     deleted; they age into the "Past" bucket by date on the dashboard).
 """
@@ -81,6 +82,7 @@ def main():
                 "highSignal": bool(ev.get("highSignal", False)),
                 "firstSeen": today, "lastSeen": today,
                 "dismissed": False, "dismissedAt": None,
+                "going": False, "goingAt": None,
             }
             # avoid id collision
             while new["id"] in by_id:

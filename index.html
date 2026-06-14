@@ -63,6 +63,9 @@
   }
   .btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--muted); }
   .btn.ghost:hover { color: var(--text); border-color: var(--muted); }
+  .btn.go { background: var(--good); color: #05210d; }
+  .b-go { background: rgba(63,185,80,.18); color: var(--good); }
+  .card.going { border-color: rgba(63,185,80,.5); }
   .cost { font-size: 12px; color: var(--muted); margin-left: auto; }
   .gear { background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 8px; padding: 6px 10px; cursor: pointer; font-size: 13px; }
   dialog { background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 14px; max-width: 460px; width: 92%; padding: 0; }
@@ -105,6 +108,7 @@
     <span class="chip active" data-cat="ai">AI / Dev</span>
     <label class="toggle"><input type="checkbox" id="showPast" /> Show past</label>
     <label class="toggle"><input type="checkbox" id="showDismissed" /> Show removed</label>
+    <label class="toggle"><input type="checkbox" id="showGoing" /> ★ My going list</label>
   </div>
 
   <div id="list"></div>
@@ -140,7 +144,9 @@ const LS = {
   token: "nyc_events_gh_token",
   repo: "nyc_events_repo",
   localDismiss: "nyc_events_local_dismiss", // ids removed in this browser, not yet synced
-  localRestore: "nyc_events_local_restore"  // ids explicitly restored here, not yet synced
+  localRestore: "nyc_events_local_restore", // ids explicitly restored here, not yet synced
+  localGoing: "nyc_events_local_going",     // ids saved to "I'll go" list, not yet synced
+  localNotGoing: "nyc_events_local_notgoing"// ids taken off the going list, not yet synced
 };
 
 const CAT_LABEL = { crypto: "Crypto / Web3", bocconi: "Bocconi", ai: "AI / Dev" };
@@ -159,11 +165,18 @@ function setOf(key) {
 function saveSet(key, set) { localStorage.setItem(key, JSON.stringify([...set])); }
 const localDismissSet = () => setOf(LS.localDismiss);
 const localRestoreSet = () => setOf(LS.localRestore);
+const localGoingSet = () => setOf(LS.localGoing);
+const localNotGoingSet = () => setOf(LS.localNotGoing);
 
 // effective dismissed = (repo flag OR locally removed) AND not locally restored
 function isDismissed(ev) {
   if (localRestoreSet().has(ev.id)) return false;
   return !!ev.dismissed || localDismissSet().has(ev.id);
+}
+// effective going = (repo flag OR locally saved) AND not locally taken off the list
+function isGoing(ev) {
+  if (localNotGoingSet().has(ev.id)) return false;
+  return !!ev.going || localGoingSet().has(ev.id);
 }
 
 function toast(msg) {
@@ -203,27 +216,30 @@ function render() {
   const q = $("#search").value.trim().toLowerCase();
   const showPast = $("#showPast").checked;
   const showDismissed = $("#showDismissed").checked;
+  const showGoing = $("#showGoing").checked;
 
   const visible = DATA.events.filter(ev => {
     if (!activeCats.has(ev.category)) return false;
-    if (!showDismissed && isDismissed(ev)) return false;
     if (q) {
       const hay = [ev.name, ev.venue, ev.description, ev.source, ev.cost].join(" ").toLowerCase();
       if (!hay.includes(q)) return false;
     }
+    if (showGoing) return isGoing(ev);          // dedicated "going" list
+    if (isGoing(ev)) return false;              // hide saved events from the main view
+    if (!showDismissed && isDismissed(ev)) return false;
     return true;
   });
 
-  // stats (over all non-dismissed, ignoring search)
-  const live = DATA.events.filter(e => !isDismissed(e));
+  // stats (over the actionable set — not removed, not already on the going list — ignoring search)
+  const live = DATA.events.filter(e => !isDismissed(e) && !isGoing(e));
   const by = (c) => live.filter(e => e.category === c).length;
   const thisWeek = live.filter(e => bucketOf(e) === "this").length;
   $("#stats").innerHTML = [
     ["Live events", live.length],
     ["This week", thisWeek],
+    ["★ Going", DATA.events.filter(isGoing).length],
     ["Crypto / Web3", by("crypto")],
     ["Bocconi", by("bocconi")],
-    ["AI / Dev", by("ai")],
     ["Removed", DATA.events.filter(isDismissed).length],
   ].map(([l,v]) => `<div class="stat"><b>${v}</b>${l}</div>`).join("");
 
@@ -240,20 +256,38 @@ function render() {
     list.appendChild(h);
     for (const ev of evs) { list.appendChild(card(ev)); shown++; }
   }
-  if (!shown) list.innerHTML = `<div class="empty">No events match your filters.</div>`;
+  if (!shown) list.innerHTML = `<div class="empty">${showGoing ? "Your going list is empty — tap \"✓ I'll go\" on an event to save it here." : "No events match your filters."}</div>`;
 }
 
 function card(ev) {
   const el = document.createElement("div");
   const dismissed = isDismissed(ev);
-  el.className = "card" + (dismissed ? " dismissed" : "");
+  const going = isGoing(ev);
+  el.className = "card" + (dismissed ? " dismissed" : "") + (going ? " going" : "");
   const dates = ev.start === ev.end ? fmt(ev.start) : `${fmt(ev.start)} – ${fmt(ev.end)}`;
   const badges = [
+    going ? `<span class="badge b-go">★ Going</span>` : "",
     `<span class="badge ${CAT_BADGE[ev.category]}">${CAT_LABEL[ev.category]}</span>`,
     ev.highSignal ? `<span class="badge b-hot">🔥 High signal</span>` : "",
     isNew(ev) ? `<span class="badge b-new">NEW</span>` : "",
     `<span class="badge b-src">${esc(ev.source)}</span>`,
   ].join("");
+
+  // Action buttons depend on the event's state:
+  //  - on the going list → only "Not going"
+  //  - removed           → only "Restore"
+  //  - otherwise (main)  → "I'll go" + "Not interesting"
+  let actions = `<a class="btn" href="${esc(ev.link)}" target="_blank" rel="noopener">RSVP / Details ↗</a>`;
+  if (going) {
+    actions += `<button class="btn ghost" data-go="0" data-id="${ev.id}">↩ Not going</button>`;
+  } else if (dismissed) {
+    actions += `<button class="btn ghost" data-dis="0" data-id="${ev.id}">↩ Restore</button>`;
+  } else {
+    actions += `<button class="btn go" data-go="1" data-id="${ev.id}" title="Save to your going list and hide it from here">✓ I'll go</button>`;
+    actions += `<button class="btn ghost" data-dis="1" data-id="${ev.id}">✕ Not interesting</button>`;
+  }
+  actions += `<span class="cost">${esc(ev.cost || "")}</span>`;
+
   el.innerHTML = `
     <div class="badges">${badges}</div>
     <div class="top">
@@ -262,18 +296,14 @@ function card(ev) {
     <div class="meta"><span class="dt">${ev.dayOfWeek ? ev.dayOfWeek + " · " : ""}${dates}${ev.time ? " · " + esc(ev.time) : ""}</span></div>
     <div class="meta">📍 ${esc(ev.venue || "TBA")}</div>
     <div class="desc">${esc(ev.description || "")}</div>
-    <div class="actions">
-      <a class="btn" href="${esc(ev.link)}" target="_blank" rel="noopener">RSVP / Details ↗</a>
-      <button class="btn ghost" data-act="${dismissed ? "restore" : "dismiss"}" data-id="${ev.id}">
-        ${dismissed ? "↩ Restore" : "✕ Not interesting"}
-      </button>
-      <span class="cost">${esc(ev.cost || "")}</span>
-    </div>`;
-  el.querySelector("[data-act]").addEventListener("click", (e) => {
-    const id = e.target.getAttribute("data-id");
-    const act = e.target.getAttribute("data-act");
-    setDismissed(id, act === "dismiss");
-  });
+    <div class="actions">${actions}</div>`;
+
+  const goBtn = el.querySelector("[data-go]");
+  if (goBtn) goBtn.addEventListener("click", (e) =>
+    setGoing(e.target.getAttribute("data-id"), e.target.getAttribute("data-go") === "1"));
+  const disBtn = el.querySelector("[data-dis]");
+  if (disBtn) disBtn.addEventListener("click", (e) =>
+    setDismissed(e.target.getAttribute("data-id"), e.target.getAttribute("data-dis") === "1"));
   return el;
 }
 
@@ -309,6 +339,29 @@ async function setDismissed(id, dismissed) {
   }
 }
 
+// ---- "I'll go" / "Not going" (optimistic local + commit-back), mirrors setDismissed ----
+async function setGoing(id, going) {
+  const ev = DATA.events.find(e => e.id === id);
+  if (!ev) return;
+  ev.going = going;
+  ev.goingAt = going ? new Date().toISOString().slice(0,10) : null;
+  const go = localGoingSet(), ng = localNotGoingSet();
+  if (going) { go.add(id); ng.delete(id); }
+  else { ng.add(id); go.delete(id); }
+  saveSet(LS.localGoing, go); saveSet(LS.localNotGoing, ng);
+  render();
+
+  const token = getToken();
+  if (!token) { toast(going ? "Saved to your going list (this device only — add a token to sync)" : "Removed from going list (this device only)"); return; }
+  try {
+    await commitState();
+    render();
+    toast(going ? "Saved to going list & synced ✓" : "Removed from going list & synced ✓");
+  } catch (err) {
+    toast("⚠ Saved locally; GitHub sync failed: " + err.message);
+  }
+}
+
 // b64 encode UTF-8 safely
 function b64(str) {
   const bytes = new TextEncoder().encode(str);
@@ -337,6 +390,7 @@ async function commitState(attempt = 0) {
   // This preserves removals made on other devices / by the weekly job and never resurrects them,
   // while still applying this browser's pending removals and explicit restores.
   const localDis = localDismissSet(), localRes = localRestoreSet();
+  const localGo = localGoingSet(), localNg = localNotGoingSet();
   const todayStr = new Date().toISOString().slice(0,10);
   for (const e of remote.events) {
     let d = !!e.dismissed;
@@ -344,9 +398,15 @@ async function commitState(attempt = 0) {
     if (localRes.has(e.id)) d = false;
     if (d !== !!e.dismissed) e.dismissedAt = d ? todayStr : null;
     e.dismissed = d;
+
+    let g = !!e.going;                 // going = remote ∪ local-going − local-notgoing
+    if (localGo.has(e.id)) g = true;
+    if (localNg.has(e.id)) g = false;
+    if (g !== !!e.going) e.goingAt = g ? todayStr : null;
+    e.going = g;
   }
   const body = {
-    message: "dashboard: update removed events",
+    message: "dashboard: update event lists (removed / going)",
     content: b64(JSON.stringify(remote, null, 2) + "\n"),
     sha: meta.sha,
     branch: "main",
@@ -357,6 +417,8 @@ async function commitState(attempt = 0) {
   DATA = remote;                       // adopt merged remote as truth
   saveSet(LS.localDismiss, new Set()); // pending intents are now reflected in the repo
   saveSet(LS.localRestore, new Set());
+  saveSet(LS.localGoing, new Set());
+  saveSet(LS.localNotGoing, new Set());
 }
 
 // ---- Settings modal ----
@@ -398,7 +460,7 @@ document.querySelectorAll(".chip[data-cat]").forEach(chip => {
     render();
   });
 });
-["#search", "#showPast", "#showDismissed"].forEach(s => $(s).addEventListener("input", render));
+["#search", "#showPast", "#showDismissed", "#showGoing"].forEach(s => $(s).addEventListener("input", render));
 
 // ---- Boot ----
 async function boot() {
