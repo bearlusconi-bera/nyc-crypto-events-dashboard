@@ -139,7 +139,8 @@ const DATA_PATH = "events.json";
 const LS = {
   token: "nyc_events_gh_token",
   repo: "nyc_events_repo",
-  localDismiss: "nyc_events_local_dismiss" // fallback set of ids dismissed without a token
+  localDismiss: "nyc_events_local_dismiss", // ids removed in this browser, not yet synced
+  localRestore: "nyc_events_local_restore"  // ids explicitly restored here, not yet synced
 };
 
 const CAT_LABEL = { crypto: "Crypto / Web3", bocconi: "Bocconi", ai: "AI / Dev" };
@@ -151,14 +152,19 @@ const $ = (s) => document.querySelector(s);
 
 function getRepo() { return localStorage.getItem(LS.repo) || DEFAULT_REPO; }
 function getToken() { return localStorage.getItem(LS.token) || ""; }
-function localDismissSet() {
-  try { return new Set(JSON.parse(localStorage.getItem(LS.localDismiss) || "[]")); }
+function setOf(key) {
+  try { return new Set(JSON.parse(localStorage.getItem(key) || "[]")); }
   catch { return new Set(); }
 }
-function saveLocalDismiss(set) { localStorage.setItem(LS.localDismiss, JSON.stringify([...set])); }
+function saveSet(key, set) { localStorage.setItem(key, JSON.stringify([...set])); }
+const localDismissSet = () => setOf(LS.localDismiss);
+const localRestoreSet = () => setOf(LS.localRestore);
 
-// effective dismissed = repo flag OR local-only flag
-function isDismissed(ev) { return !!ev.dismissed || localDismissSet().has(ev.id); }
+// effective dismissed = (repo flag OR locally removed) AND not locally restored
+function isDismissed(ev) {
+  if (localRestoreSet().has(ev.id)) return false;
+  return !!ev.dismissed || localDismissSet().has(ev.id);
+}
 
 function toast(msg) {
   const t = $("#toast"); t.textContent = msg; t.classList.add("show");
@@ -281,20 +287,22 @@ function esc(s) { return String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;"
 async function setDismissed(id, dismissed) {
   const ev = DATA.events.find(e => e.id === id);
   if (!ev) return;
-  // optimistic local update
+  // optimistic local update — record the intent (dismiss vs restore) as separate sets.
+  // Both intents are applied against the FRESH remote at commit time (commitState), so a
+  // restore must always be recorded to win even when the local copy is staler than the repo.
   ev.dismissed = dismissed;
   ev.dismissedAt = dismissed ? new Date().toISOString().slice(0,10) : null;
-  const set = localDismissSet();
-  if (dismissed) set.add(id); else set.delete(id);
-  saveLocalDismiss(set);
+  const dis = localDismissSet(), res = localRestoreSet();
+  if (dismissed) { dis.add(id); res.delete(id); }
+  else { res.add(id); dis.delete(id); }
+  saveSet(LS.localDismiss, dis); saveSet(LS.localRestore, res);
   render();
 
   const token = getToken();
-  if (!token) { toast(dismissed ? "Removed (this device only — add a token to sync)" : "Restored locally"); return; }
+  if (!token) { toast(dismissed ? "Removed (this device only — add a token to sync)" : "Restored (this device only)"); return; }
   try {
-    await commitState();
-    // once committed, the repo is source of truth; clear the local-only marker for this id
-    const s2 = localDismissSet(); s2.delete(id); saveLocalDismiss(s2);
+    await commitState();   // clears the local sets on success and adopts the merged remote
+    render();
     toast(dismissed ? "Removed & synced to GitHub ✓" : "Restored & synced ✓");
   } catch (err) {
     toast("⚠ Saved locally; GitHub sync failed: " + err.message);
@@ -325,11 +333,17 @@ async function commitState(attempt = 0) {
   const meta = await cur.json();
   const remote = JSON.parse(b64decode(meta.content));
 
-  // merge: apply our local dismissed flags onto the freshest remote copy
-  const localById = Object.fromEntries(DATA.events.map(e => [e.id, e]));
+  // three-way merge onto the freshest remote: dismissed = remote ∪ local-removals − local-restores.
+  // This preserves removals made on other devices / by the weekly job and never resurrects them,
+  // while still applying this browser's pending removals and explicit restores.
+  const localDis = localDismissSet(), localRes = localRestoreSet();
+  const todayStr = new Date().toISOString().slice(0,10);
   for (const e of remote.events) {
-    const loc = localById[e.id];
-    if (loc) { e.dismissed = loc.dismissed; e.dismissedAt = loc.dismissedAt; }
+    let d = !!e.dismissed;
+    if (localDis.has(e.id)) d = true;
+    if (localRes.has(e.id)) d = false;
+    if (d !== !!e.dismissed) e.dismissedAt = d ? todayStr : null;
+    e.dismissed = d;
   }
   const body = {
     message: "dashboard: update removed events",
@@ -340,7 +354,9 @@ async function commitState(attempt = 0) {
   const put = await fetch(url, { method: "PUT", headers, body: JSON.stringify(body) });
   if (put.status === 409 && attempt < 2) return commitState(attempt + 1); // race with weekly job
   if (!put.ok) { const t = await put.text(); throw new Error(put.status + " " + t.slice(0,80)); }
-  DATA = remote; // adopt merged remote as truth
+  DATA = remote;                       // adopt merged remote as truth
+  saveSet(LS.localDismiss, new Set()); // pending intents are now reflected in the repo
+  saveSet(LS.localRestore, new Set());
 }
 
 // ---- Settings modal ----
