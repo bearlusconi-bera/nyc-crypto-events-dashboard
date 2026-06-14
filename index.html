@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🗽 NYC Crypto & Bocconi Events</title>
+<style>
+  :root {
+    --bg: #0d1117; --panel: #161b22; --panel2: #1c2230; --border: #2a3140;
+    --text: #e6edf3; --muted: #8b949e; --accent: #6ea8fe; --accent2: #d2a8ff;
+    --crypto: #f0b429; --bocconi: #4cc9f0; --ai: #b388ff;
+    --good: #3fb950; --warn: #f85149; --pill: #21262d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 24px 18px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  .sub { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
+  .stats { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .stat { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; font-size: 13px; }
+  .stat b { font-size: 17px; display: block; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
+  .chip {
+    background: var(--pill); border: 1px solid var(--border); color: var(--text);
+    border-radius: 999px; padding: 6px 12px; font-size: 13px; cursor: pointer; user-select: none;
+  }
+  .chip.active { background: var(--accent); color: #06101f; border-color: var(--accent); font-weight: 600; }
+  .chip.off { opacity: .45; }
+  input[type=search] {
+    flex: 1; min-width: 180px; background: var(--panel); border: 1px solid var(--border);
+    color: var(--text); border-radius: 8px; padding: 8px 12px; font-size: 14px;
+  }
+  .toggle { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; cursor: pointer; }
+  .section-title { margin: 26px 0 10px; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  .section-title.thisweek { color: var(--accent); }
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+    padding: 14px 16px; margin-bottom: 12px; position: relative; transition: opacity .15s;
+  }
+  .card.dismissed { opacity: .4; }
+  .card .top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+  .card h3 { margin: 0; font-size: 17px; }
+  .meta { color: var(--muted); font-size: 13px; margin: 6px 0; }
+  .meta .dt { color: var(--text); font-weight: 600; }
+  .desc { font-size: 14px; margin: 8px 0; }
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+  .badge { font-size: 11px; padding: 2px 8px; border-radius: 6px; font-weight: 600; letter-spacing: .02em; }
+  .b-crypto { background: rgba(240,180,41,.15); color: var(--crypto); }
+  .b-bocconi { background: rgba(76,201,240,.15); color: var(--bocconi); }
+  .b-ai { background: rgba(179,136,255,.15); color: var(--ai); }
+  .b-hot { background: rgba(248,81,73,.16); color: var(--warn); }
+  .b-new { background: rgba(63,185,80,.16); color: var(--good); }
+  .b-src { background: var(--pill); color: var(--muted); }
+  .actions { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+  .btn {
+    background: var(--accent); color: #06101f; border: none; border-radius: 8px;
+    padding: 7px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
+  }
+  .btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--muted); }
+  .btn.ghost:hover { color: var(--text); border-color: var(--muted); }
+  .cost { font-size: 12px; color: var(--muted); margin-left: auto; }
+  .gear { background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 8px; padding: 6px 10px; cursor: pointer; font-size: 13px; }
+  dialog { background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 14px; max-width: 460px; width: 92%; padding: 0; }
+  dialog::backdrop { background: rgba(0,0,0,.6); }
+  .modal-in { padding: 20px; }
+  dialog h2 { margin: 0 0 10px; font-size: 18px; }
+  dialog label { display: block; font-size: 13px; color: var(--muted); margin: 12px 0 4px; }
+  dialog input { width: 100%; background: var(--panel2); border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 8px 10px; font-size: 13px; }
+  .note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+  .note.warn { color: var(--crypto); }
+  .row { display: flex; gap: 8px; margin-top: 16px; }
+  .status { font-size: 12px; margin-top: 8px; min-height: 16px; }
+  .status.ok { color: var(--good); } .status.err { color: var(--warn); }
+  .empty { color: var(--muted); text-align: center; padding: 40px 0; }
+  .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--panel2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; font-size: 13px; opacity: 0; transition: opacity .2s; pointer-events: none; z-index: 10; }
+  .toast.show { opacity: 1; }
+  footer { color: var(--muted); font-size: 12px; margin-top: 30px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+      <div>
+        <h1>🗽 NYC Crypto &amp; Bocconi Events</h1>
+        <div class="sub" id="sub">Loading…</div>
+      </div>
+      <button class="gear" id="settingsBtn" title="Configure GitHub sync">⚙︎ Sync</button>
+    </div>
+  </header>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="controls">
+    <input type="search" id="search" placeholder="Search events, venues, hosts…" />
+  </div>
+  <div class="controls">
+    <span class="chip active" data-cat="crypto">Crypto / Web3</span>
+    <span class="chip active" data-cat="bocconi">Bocconi</span>
+    <span class="chip active" data-cat="ai">AI / Dev</span>
+    <label class="toggle"><input type="checkbox" id="showPast" /> Show past</label>
+    <label class="toggle"><input type="checkbox" id="showDismissed" /> Show removed</label>
+  </div>
+
+  <div id="list"></div>
+
+  <footer id="footer"></footer>
+</div>
+
+<dialog id="settings">
+  <div class="modal-in">
+    <h2>⚙︎ GitHub Sync</h2>
+    <p class="note">Removals are committed back to <code id="repoLabel"></code> so they sync across devices and the weekly job respects them. Paste a <b>fine-grained Personal Access Token</b> scoped to <b>only this repo</b> with <b>Contents: Read &amp; write</b>.</p>
+    <label>GitHub token (stored only in this browser)</label>
+    <input type="password" id="token" placeholder="github_pat_… or ghp_…" autocomplete="off" />
+    <label>Repo (owner/name)</label>
+    <input type="text" id="repo" placeholder="owner/name" />
+    <p class="note warn">⚠ The token lives in this browser's localStorage. Anyone with access to this device/browser can read it. Use a token scoped to this one repo only, and revoke it if the device is shared. Without a token, removals still work locally on this device.</p>
+    <div class="status" id="settingsStatus"></div>
+    <div class="row">
+      <button class="btn" id="saveToken">Save</button>
+      <button class="btn ghost" id="clearToken">Remove token</button>
+      <button class="btn ghost" id="closeSettings" style="margin-left:auto">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ---- Config ----
+const DEFAULT_REPO = "bearlusconi-bera/nyc-crypto-events-dashboard";
+const DATA_PATH = "events.json";
+const LS = {
+  token: "nyc_events_gh_token",
+  repo: "nyc_events_repo",
+  localDismiss: "nyc_events_local_dismiss" // fallback set of ids dismissed without a token
+};
+
+const CAT_LABEL = { crypto: "Crypto / Web3", bocconi: "Bocconi", ai: "AI / Dev" };
+const CAT_BADGE = { crypto: "b-crypto", bocconi: "b-bocconi", ai: "b-ai" };
+
+let DATA = null;          // parsed events.json
+let activeCats = new Set(["crypto", "bocconi", "ai"]);
+const $ = (s) => document.querySelector(s);
+
+function getRepo() { return localStorage.getItem(LS.repo) || DEFAULT_REPO; }
+function getToken() { return localStorage.getItem(LS.token) || ""; }
+function localDismissSet() {
+  try { return new Set(JSON.parse(localStorage.getItem(LS.localDismiss) || "[]")); }
+  catch { return new Set(); }
+}
+function saveLocalDismiss(set) { localStorage.setItem(LS.localDismiss, JSON.stringify([...set])); }
+
+// effective dismissed = repo flag OR local-only flag
+function isDismissed(ev) { return !!ev.dismissed || localDismissSet().has(ev.id); }
+
+function toast(msg) {
+  const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove("show"), 2600);
+}
+
+// ---- Date bucketing (relative to viewer's "today") ----
+function todayMidnight() { const d = new Date(); d.setHours(0,0,0,0); return d; }
+function parseDate(s) { const [y,m,d] = s.split("-").map(Number); return new Date(y, m-1, d); }
+function dayDiff(a, b) { return Math.round((a - b) / 86400000); }
+
+function bucketOf(ev) {
+  const today = todayMidnight();
+  const start = parseDate(ev.start), end = parseDate(ev.end || ev.start);
+  if (end < today) return "past";
+  const ds = dayDiff(start, today);
+  if (ds <= 6) return "this";       // includes ongoing events that started earlier
+  if (ds <= 13) return "next";
+  return "later";
+}
+const BUCKETS = [
+  { key: "this",  title: "This Week", cls: "thisweek" },
+  { key: "next",  title: "Next Week", cls: "" },
+  { key: "later", title: "Upcoming",  cls: "" },
+  { key: "past",  title: "Past",      cls: "" },
+];
+
+function isNew(ev) {
+  if (!ev.firstSeen) return false;
+  return dayDiff(todayMidnight(), parseDate(ev.firstSeen)) <= 7;
+}
+
+// ---- Rendering ----
+function render() {
+  if (!DATA) return;
+  const q = $("#search").value.trim().toLowerCase();
+  const showPast = $("#showPast").checked;
+  const showDismissed = $("#showDismissed").checked;
+
+  const visible = DATA.events.filter(ev => {
+    if (!activeCats.has(ev.category)) return false;
+    if (!showDismissed && isDismissed(ev)) return false;
+    if (q) {
+      const hay = [ev.name, ev.venue, ev.description, ev.source, ev.cost].join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  // stats (over all non-dismissed, ignoring search)
+  const live = DATA.events.filter(e => !isDismissed(e));
+  const by = (c) => live.filter(e => e.category === c).length;
+  const thisWeek = live.filter(e => bucketOf(e) === "this").length;
+  $("#stats").innerHTML = [
+    ["Live events", live.length],
+    ["This week", thisWeek],
+    ["Crypto / Web3", by("crypto")],
+    ["Bocconi", by("bocconi")],
+    ["AI / Dev", by("ai")],
+    ["Removed", DATA.events.filter(isDismissed).length],
+  ].map(([l,v]) => `<div class="stat"><b>${v}</b>${l}</div>`).join("");
+
+  const list = $("#list"); list.innerHTML = "";
+  let shown = 0;
+  for (const b of BUCKETS) {
+    if (b.key === "past" && !showPast) continue;
+    const evs = visible.filter(e => bucketOf(e) === b.key)
+                       .sort((a,z) => a.start.localeCompare(z.start));
+    if (!evs.length) continue;
+    const h = document.createElement("div");
+    h.className = "section-title " + b.cls;
+    h.textContent = `${b.title} · ${evs.length}`;
+    list.appendChild(h);
+    for (const ev of evs) { list.appendChild(card(ev)); shown++; }
+  }
+  if (!shown) list.innerHTML = `<div class="empty">No events match your filters.</div>`;
+}
+
+function card(ev) {
+  const el = document.createElement("div");
+  const dismissed = isDismissed(ev);
+  el.className = "card" + (dismissed ? " dismissed" : "");
+  const dates = ev.start === ev.end ? fmt(ev.start) : `${fmt(ev.start)} – ${fmt(ev.end)}`;
+  const badges = [
+    `<span class="badge ${CAT_BADGE[ev.category]}">${CAT_LABEL[ev.category]}</span>`,
+    ev.highSignal ? `<span class="badge b-hot">🔥 High signal</span>` : "",
+    isNew(ev) ? `<span class="badge b-new">NEW</span>` : "",
+    `<span class="badge b-src">${esc(ev.source)}</span>`,
+  ].join("");
+  el.innerHTML = `
+    <div class="badges">${badges}</div>
+    <div class="top">
+      <h3>${esc(ev.name)}</h3>
+    </div>
+    <div class="meta"><span class="dt">${ev.dayOfWeek ? ev.dayOfWeek + " · " : ""}${dates}${ev.time ? " · " + esc(ev.time) : ""}</span></div>
+    <div class="meta">📍 ${esc(ev.venue || "TBA")}</div>
+    <div class="desc">${esc(ev.description || "")}</div>
+    <div class="actions">
+      <a class="btn" href="${esc(ev.link)}" target="_blank" rel="noopener">RSVP / Details ↗</a>
+      <button class="btn ghost" data-act="${dismissed ? "restore" : "dismiss"}" data-id="${ev.id}">
+        ${dismissed ? "↩ Restore" : "✕ Not interesting"}
+      </button>
+      <span class="cost">${esc(ev.cost || "")}</span>
+    </div>`;
+  el.querySelector("[data-act]").addEventListener("click", (e) => {
+    const id = e.target.getAttribute("data-id");
+    const act = e.target.getAttribute("data-act");
+    setDismissed(id, act === "dismiss");
+  });
+  return el;
+}
+
+function fmt(s) {
+  const d = parseDate(s);
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+}
+function esc(s) { return String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c])); }
+
+// ---- Dismiss / restore (optimistic local + commit-back) ----
+async function setDismissed(id, dismissed) {
+  const ev = DATA.events.find(e => e.id === id);
+  if (!ev) return;
+  // optimistic local update
+  ev.dismissed = dismissed;
+  ev.dismissedAt = dismissed ? new Date().toISOString().slice(0,10) : null;
+  const set = localDismissSet();
+  if (dismissed) set.add(id); else set.delete(id);
+  saveLocalDismiss(set);
+  render();
+
+  const token = getToken();
+  if (!token) { toast(dismissed ? "Removed (this device only — add a token to sync)" : "Restored locally"); return; }
+  try {
+    await commitState();
+    // once committed, the repo is source of truth; clear the local-only marker for this id
+    const s2 = localDismissSet(); s2.delete(id); saveLocalDismiss(s2);
+    toast(dismissed ? "Removed & synced to GitHub ✓" : "Restored & synced ✓");
+  } catch (err) {
+    toast("⚠ Saved locally; GitHub sync failed: " + err.message);
+  }
+}
+
+// b64 encode UTF-8 safely
+function b64(str) {
+  const bytes = new TextEncoder().encode(str);
+  let bin = ""; bytes.forEach(b => bin += String.fromCharCode(b));
+  return btoa(bin);
+}
+function b64decode(str) {
+  const bin = atob(str.replace(/\n/g, ""));
+  const bytes = Uint8Array.from(bin, c => c.charCodeAt(0));
+  return new TextDecoder().decode(bytes);
+}
+
+// Commit the current DATA.events dismissed flags back to events.json (with retry on sha conflict)
+async function commitState(attempt = 0) {
+  const repo = getRepo(), token = getToken();
+  const url = `https://api.github.com/repos/${repo}/contents/${DATA_PATH}`;
+  const headers = { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" };
+
+  // fetch latest to get sha + remote content (so we merge, not clobber)
+  const cur = await fetch(url + "?ref=main&t=" + Date.now(), { headers });
+  if (!cur.ok) throw new Error("read " + cur.status);
+  const meta = await cur.json();
+  const remote = JSON.parse(b64decode(meta.content));
+
+  // merge: apply our local dismissed flags onto the freshest remote copy
+  const localById = Object.fromEntries(DATA.events.map(e => [e.id, e]));
+  for (const e of remote.events) {
+    const loc = localById[e.id];
+    if (loc) { e.dismissed = loc.dismissed; e.dismissedAt = loc.dismissedAt; }
+  }
+  const body = {
+    message: "dashboard: update removed events",
+    content: b64(JSON.stringify(remote, null, 2) + "\n"),
+    sha: meta.sha,
+    branch: "main",
+  };
+  const put = await fetch(url, { method: "PUT", headers, body: JSON.stringify(body) });
+  if (put.status === 409 && attempt < 2) return commitState(attempt + 1); // race with weekly job
+  if (!put.ok) { const t = await put.text(); throw new Error(put.status + " " + t.slice(0,80)); }
+  DATA = remote; // adopt merged remote as truth
+}
+
+// ---- Settings modal ----
+function openSettings() {
+  $("#repoLabel").textContent = getRepo();
+  $("#token").value = getToken();
+  $("#repo").value = getRepo();
+  $("#settingsStatus").textContent = getToken() ? "Token configured — removals sync to GitHub." : "No token — removals save on this device only.";
+  $("#settingsStatus").className = "status " + (getToken() ? "ok" : "");
+  $("#settings").showModal();
+}
+$("#settingsBtn").addEventListener("click", openSettings);
+$("#closeSettings").addEventListener("click", () => $("#settings").close());
+$("#saveToken").addEventListener("click", async () => {
+  const tk = $("#token").value.trim(), rp = $("#repo").value.trim();
+  if (rp) localStorage.setItem(LS.repo, rp);
+  if (tk) localStorage.setItem(LS.token, tk); else localStorage.removeItem(LS.token);
+  const st = $("#settingsStatus");
+  if (!tk) { st.textContent = "Token removed. Removals are local-only now."; st.className = "status"; return; }
+  st.textContent = "Verifying token…"; st.className = "status";
+  try {
+    const r = await fetch(`https://api.github.com/repos/${getRepo()}`, { headers: { Authorization: `Bearer ${tk}` } });
+    if (!r.ok) throw new Error(r.status === 404 ? "repo not found / no access" : "HTTP " + r.status);
+    st.textContent = "✓ Token works. Removals will sync to GitHub."; st.className = "status ok";
+    toast("GitHub sync enabled ✓");
+  } catch (e) { st.textContent = "✗ " + e.message; st.className = "status err"; }
+});
+$("#clearToken").addEventListener("click", () => {
+  localStorage.removeItem(LS.token); $("#token").value = "";
+  $("#settingsStatus").textContent = "Token removed."; $("#settingsStatus").className = "status";
+});
+
+// ---- Filters ----
+document.querySelectorAll(".chip[data-cat]").forEach(chip => {
+  chip.addEventListener("click", () => {
+    const c = chip.getAttribute("data-cat");
+    if (activeCats.has(c)) { activeCats.delete(c); chip.classList.remove("active"); chip.classList.add("off"); }
+    else { activeCats.add(c); chip.classList.add("active"); chip.classList.remove("off"); }
+    render();
+  });
+});
+["#search", "#showPast", "#showDismissed"].forEach(s => $(s).addEventListener("input", render));
+
+// ---- Boot ----
+async function boot() {
+  try {
+    const r = await fetch(DATA_PATH + "?t=" + Date.now());
+    DATA = await r.json();
+    const w = DATA.window;
+    $("#sub").innerHTML = `Tracking NYC crypto/web3, Bocconi &amp; AI events · data last refreshed <b>${DATA.generated}</b>`;
+    $("#footer").innerHTML = `Auto-refreshed weekly · <a href="https://github.com/${getRepo()}" target="_blank" rel="noopener">source</a> · removals ${getToken() ? "sync to GitHub" : "are local until you add a token (⚙︎ Sync)"}`;
+    render();
+  } catch (e) {
+    $("#list").innerHTML = `<div class="empty">Couldn't load events.json — ${esc(e.message)}</div>`;
+  }
+}
+boot();
+</script>
+</body>
+</html>
