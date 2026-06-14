@@ -1,6 +1,9 @@
 {
   "generated": "2026-06-14",
-  "window": { "start": "2026-06-13", "end": "2026-06-27" },
+  "window": {
+    "start": "2026-06-13",
+    "end": "2026-06-27"
+  },
   "events": [
     {
       "id": "staaake-nba-finals-2026-06-13",
@@ -229,6 +232,69 @@
       "lastSeen": "2026-06-14",
       "dismissed": false,
       "dismissedAt": null
+    },
+    {
+      "id": "iacc-refer-a-friend-aperitivo-2026-06-17",
+      "name": "IACC Refer-a-Friend Aperitivo",
+      "start": "2026-06-17",
+      "end": "2026-06-17",
+      "time": "",
+      "dayOfWeek": "Wed",
+      "venue": "Eataly Café, Hudson Yards",
+      "category": "italian",
+      "source": "Italy-America Chamber of Commerce",
+      "link": "https://italchamber.org/civicrm/event/register?reset=1&id=691",
+      "description": "IACC summer networking aperitivo — bring a friend interested in the Chamber; light bites & drinks.",
+      "cost": "RSVP (price not listed)",
+      "highSignal": false,
+      "firstSeen": "2026-06-14",
+      "lastSeen": "2026-06-14",
+      "dismissed": false,
+      "dismissedAt": null,
+      "going": false,
+      "goingAt": null
+    },
+    {
+      "id": "iacc-meet-the-member-piaggio-group-ameri-2026-06-23",
+      "name": "IACC Meet The Member: Piaggio Group Americas",
+      "start": "2026-06-23",
+      "end": "2026-06-23",
+      "time": "",
+      "dayOfWeek": "Tue",
+      "venue": "Piaggio offices, Meatpacking District",
+      "category": "italian",
+      "source": "Italy-America Chamber of Commerce",
+      "link": "https://italchamber.org/civicrm/event/register?reset=1&id=698",
+      "description": "Member evening with Piaggio Group Americas (Vespa, Moto Guzzi, Aprilia) — vehicle showcase + networking.",
+      "cost": "RSVP (price not listed)",
+      "highSignal": false,
+      "firstSeen": "2026-06-14",
+      "lastSeen": "2026-06-14",
+      "dismissed": false,
+      "dismissedAt": null,
+      "going": false,
+      "goingAt": null
+    },
+    {
+      "id": "iacc-annual-membership-meeting-2026-06-26",
+      "name": "IACC Annual Membership Meeting",
+      "start": "2026-06-26",
+      "end": "2026-06-26",
+      "time": "",
+      "dayOfWeek": "Fri",
+      "venue": "Intesa Sanpaolo HQ, NYC",
+      "category": "italian",
+      "source": "Italy-America Chamber of Commerce",
+      "link": "https://italchamber.org/civicrm/event/register?reset=1&id=693",
+      "description": "IACC annual membership meeting — board announcements, year in review, new member initiatives. (Members)",
+      "cost": "Members",
+      "highSignal": false,
+      "firstSeen": "2026-06-14",
+      "lastSeen": "2026-06-14",
+      "dismissed": false,
+      "dismissedAt": null,
+      "going": false,
+      "goingAt": null
     }
   ]
 }

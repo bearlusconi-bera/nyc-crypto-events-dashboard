@@ -8,7 +8,7 @@
   :root {
     --bg: #0d1117; --panel: #161b22; --panel2: #1c2230; --border: #2a3140;
     --text: #e6edf3; --muted: #8b949e; --accent: #6ea8fe; --accent2: #d2a8ff;
-    --crypto: #f0b429; --bocconi: #4cc9f0; --ai: #b388ff;
+    --crypto: #f0b429; --bocconi: #4cc9f0; --ai: #b388ff; --italian: #f778ba;
     --good: #3fb950; --warn: #f85149; --pill: #21262d;
   }
   * { box-sizing: border-box; }
@@ -53,6 +53,7 @@
   .b-crypto { background: rgba(240,180,41,.15); color: var(--crypto); }
   .b-bocconi { background: rgba(76,201,240,.15); color: var(--bocconi); }
   .b-ai { background: rgba(179,136,255,.15); color: var(--ai); }
+  .b-italian { background: rgba(247,120,186,.15); color: var(--italian); }
   .b-hot { background: rgba(248,81,73,.16); color: var(--warn); }
   .b-new { background: rgba(63,185,80,.16); color: var(--good); }
   .b-src { background: var(--pill); color: var(--muted); }
@@ -106,6 +107,7 @@
     <span class="chip active" data-cat="crypto">Crypto / Web3</span>
     <span class="chip active" data-cat="bocconi">Bocconi</span>
     <span class="chip active" data-cat="ai">AI / Dev</span>
+    <span class="chip active" data-cat="italian">Italian</span>
     <label class="toggle"><input type="checkbox" id="showPast" /> Show past</label>
     <label class="toggle"><input type="checkbox" id="showDismissed" /> Show removed</label>
     <label class="toggle"><input type="checkbox" id="showGoing" /> ★ My going list</label>
@@ -149,11 +151,11 @@ const LS = {
   localNotGoing: "nyc_events_local_notgoing"// ids taken off the going list, not yet synced
 };
 
-const CAT_LABEL = { crypto: "Crypto / Web3", bocconi: "Bocconi", ai: "AI / Dev" };
-const CAT_BADGE = { crypto: "b-crypto", bocconi: "b-bocconi", ai: "b-ai" };
+const CAT_LABEL = { crypto: "Crypto / Web3", bocconi: "Bocconi", ai: "AI / Dev", italian: "Italian" };
+const CAT_BADGE = { crypto: "b-crypto", bocconi: "b-bocconi", ai: "b-ai", italian: "b-italian" };
 
 let DATA = null;          // parsed events.json
-let activeCats = new Set(["crypto", "bocconi", "ai"]);
+let activeCats = new Set(["crypto", "bocconi", "ai", "italian"]);
 const $ = (s) => document.querySelector(s);
 
 function getRepo() { return localStorage.getItem(LS.repo) || DEFAULT_REPO; }
@@ -240,6 +242,7 @@ function render() {
     ["★ Going", DATA.events.filter(isGoing).length],
     ["Crypto / Web3", by("crypto")],
     ["Bocconi", by("bocconi")],
+    ["Italian", by("italian")],
     ["Removed", DATA.events.filter(isDismissed).length],
   ].map(([l,v]) => `<div class="stat"><b>${v}</b>${l}</div>`).join("");
 
@@ -468,7 +471,7 @@ async function boot() {
     const r = await fetch(DATA_PATH + "?t=" + Date.now());
     DATA = await r.json();
     const w = DATA.window;
-    $("#sub").innerHTML = `Tracking NYC crypto/web3, Bocconi &amp; AI events · data last refreshed <b>${DATA.generated}</b>`;
+    $("#sub").innerHTML = `Tracking NYC crypto/web3, Bocconi, Italian &amp; AI events · data last refreshed <b>${DATA.generated}</b>`;
     $("#footer").innerHTML = `Auto-refreshed weekly · <a href="https://github.com/${getRepo()}" target="_blank" rel="noopener">source</a> · removals ${getToken() ? "sync to GitHub" : "are local until you add a token (⚙︎ Sync)"}`;
     render();
   } catch (e) {
