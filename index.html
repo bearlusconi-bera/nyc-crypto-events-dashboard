@@ -66,6 +66,7 @@
   }
   .btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--muted); }
   .btn.ghost:hover { color: var(--text); border-color: var(--muted); }
+  .btn.disabled { opacity: .55; cursor: not-allowed; pointer-events: none; }
   .btn.go { background: var(--good); color: #05210d; }
   .b-go { background: rgba(63,185,80,.18); color: var(--good); }
   .card.going { border-color: rgba(63,185,80,.5); }
@@ -225,7 +226,8 @@ function render() {
   const showGoing = $("#showGoing").checked;
 
   const visible = DATA.events.filter(ev => {
-    if (!activeCats.has(ev.category)) return false;
+    const knownCategory = Object.prototype.hasOwnProperty.call(CAT_LABEL, ev.category);
+    if (knownCategory && !activeCats.has(ev.category)) return false;
     if (q) {
       const hay = [ev.name, ev.venue, ev.description, ev.source, ev.cost].join(" ").toLowerCase();
       if (!hay.includes(q)) return false;
@@ -272,11 +274,13 @@ function card(ev) {
   const el = document.createElement("div");
   const dismissed = isDismissed(ev);
   const going = isGoing(ev);
+  const catLabel = CAT_LABEL[ev.category] || "Uncategorized";
+  const catBadge = CAT_BADGE[ev.category] || "b-src";
   el.className = "card" + (dismissed ? " dismissed" : "") + (going ? " going" : "");
   const dates = ev.start === ev.end ? fmt(ev.start) : `${fmt(ev.start)} – ${fmt(ev.end)}`;
   const badges = [
     going ? `<span class="badge b-go">★ Going</span>` : "",
-    `<span class="badge ${CAT_BADGE[ev.category]}">${CAT_LABEL[ev.category]}</span>`,
+    `<span class="badge ${catBadge}">${esc(catLabel)}</span>`,
     ev.highSignal ? `<span class="badge b-hot">🔥 High signal</span>` : "",
     isNew(ev) ? `<span class="badge b-new">NEW</span>` : "",
     `<span class="badge b-src">${esc(ev.source)}</span>`,
@@ -286,14 +290,17 @@ function card(ev) {
   //  - on the going list → only "Not going"
   //  - removed           → only "Restore"
   //  - otherwise (main)  → "I'll go" + "Not interesting"
-  let actions = `<a class="btn" href="${esc(ev.link)}" target="_blank" rel="noopener">RSVP / Details ↗</a>`;
+  const href = safeHref(ev.link);
+  let actions = href
+    ? `<a class="btn" href="${esc(href)}" target="_blank" rel="noopener">RSVP / Details ↗</a>`
+    : `<span class="btn ghost disabled">No safe link</span>`;
   if (going) {
-    actions += `<button class="btn ghost" data-go="0" data-id="${ev.id}">↩ Not going</button>`;
+    actions += `<button class="btn ghost" data-go="0" data-id="${esc(ev.id)}">↩ Not going</button>`;
   } else if (dismissed) {
-    actions += `<button class="btn ghost" data-dis="0" data-id="${ev.id}">↩ Restore</button>`;
+    actions += `<button class="btn ghost" data-dis="0" data-id="${esc(ev.id)}">↩ Restore</button>`;
   } else {
-    actions += `<button class="btn go" data-go="1" data-id="${ev.id}" title="Save to your going list and hide it from here">✓ I'll go</button>`;
-    actions += `<button class="btn ghost" data-dis="1" data-id="${ev.id}">✕ Not interesting</button>`;
+    actions += `<button class="btn go" data-go="1" data-id="${esc(ev.id)}" title="Save to your going list and hide it from here">✓ I'll go</button>`;
+    actions += `<button class="btn ghost" data-dis="1" data-id="${esc(ev.id)}">✕ Not interesting</button>`;
   }
   actions += `<span class="cost">${esc(ev.cost || "")}</span>`;
 
@@ -321,6 +328,14 @@ function fmt(s) {
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 function esc(s) { return String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c])); }
+function safeHref(raw) {
+  try {
+    const u = new URL(String(raw || ""), window.location.href);
+    return (u.protocol === "http:" || u.protocol === "https:") ? u.href : "";
+  } catch {
+    return "";
+  }
+}
 
 // ---- Dismiss / restore (optimistic local + commit-back) ----
 async function setDismissed(id, dismissed) {
