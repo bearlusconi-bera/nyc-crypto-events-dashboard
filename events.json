@@ -1,8 +1,8 @@
 {
   "generated": "2026-06-14",
   "window": {
-    "start": "2026-06-13",
-    "end": "2026-06-27"
+    "start": "2026-06-14",
+    "end": "2026-09-12"
   },
   "events": [
     {
@@ -22,7 +22,10 @@
       "firstSeen": "2026-06-14",
       "lastSeen": "2026-06-14",
       "dismissed": false,
-      "dismissedAt": null
+      "dismissedAt": null,
+      "canonicalLink": "https://lu.ma/staaake-urn6",
+      "going": false,
+      "goingAt": null
     },
     {
       "id": "staaake-power-walk-2026-06-14",
@@ -41,7 +44,10 @@
       "firstSeen": "2026-06-14",
       "lastSeen": "2026-06-14",
       "dismissed": false,
-      "dismissedAt": null
+      "dismissedAt": null,
+      "canonicalLink": "https://lu.ma/staaake-lnwb",
+      "going": false,
+      "goingAt": null
     },
     {
       "id": "staaake-founders-rooftop-2026-06-14",
@@ -60,7 +66,10 @@
       "firstSeen": "2026-06-14",
       "lastSeen": "2026-06-14",
       "dismissed": false,
-      "dismissedAt": null
+      "dismissedAt": null,
+      "canonicalLink": "https://lu.ma/staaake-hblv",
+      "going": false,
+      "goingAt": null
     },
     {
       "id": "cryptomondays-institutional-2026-06-15",
@@ -79,7 +88,10 @@
       "firstSeen": "2026-06-14",
       "lastSeen": "2026-06-14",
       "dismissed": false,
-      "dismissedAt": null
+      "dismissedAt": null,
+      "canonicalLink": "https://lu.ma/sbszoga2",
+      "going": false,
+      "goingAt": null
     },
     {
       "id": "bocconi-parzani-2026-06-15",
@@ -98,7 +110,10 @@
       "firstSeen": "2026-06-14",
       "lastSeen": "2026-06-14",
       "dismissed": false,
-      "dismissedAt": null
+      "dismissedAt": null,
+      "canonicalLink": "https://friendsofbocconiusa.org/civicrm/event/register/?reset=1&id=159",
+      "going": false,
+      "goingAt": null
     },
     {
       "id": "vibecon-2026-06-17",
@@ -117,7 +132,10 @@
       "firstSeen": "2026-06-14",
       "lastSeen": "2026-06-14",
       "dismissed": false,
-      "dismissedAt": null
+      "dismissedAt": null,
+      "canonicalLink": "https://vibecon.ai/",
+      "going": false,
+      "goingAt": null
     },
     {
       "id": "onchain-finance-bigwhale-2026-06-22",
@@ -136,7 +154,10 @@
       "firstSeen": "2026-06-14",
       "lastSeen": "2026-06-14",
       "dismissed": false,
-      "dismissedAt": null
+      "dismissedAt": null,
+      "canonicalLink": "https://lu.ma/tbw_nyc",
+      "going": false,
+      "goingAt": null
     },
     {
       "id": "tokenizethis-2026-06-23",
@@ -155,7 +176,10 @@
       "firstSeen": "2026-06-14",
       "lastSeen": "2026-06-14",
       "dismissed": false,
-      "dismissedAt": null
+      "dismissedAt": null,
+      "canonicalLink": "https://lu.ma/3armqtbg",
+      "going": false,
+      "goingAt": null
     },
     {
       "id": "blockchain-tuesday-conflux-2026-06-23",
@@ -174,7 +198,10 @@
       "firstSeen": "2026-06-14",
       "lastSeen": "2026-06-14",
       "dismissed": false,
-      "dismissedAt": null
+      "dismissedAt": null,
+      "canonicalLink": "https://lu.ma/conflux-dc1p",
+      "going": false,
+      "goingAt": null
     },
     {
       "id": "stablecoin-sessions-permissionless-2026-06-24",
@@ -193,7 +220,10 @@
       "firstSeen": "2026-06-14",
       "lastSeen": "2026-06-14",
       "dismissed": false,
-      "dismissedAt": null
+      "dismissedAt": null,
+      "canonicalLink": "https://lu.ma/9akbzrxu",
+      "going": false,
+      "goingAt": null
     },
     {
       "id": "bfc-nyc-2026-06-26",
@@ -212,7 +242,10 @@
       "firstSeen": "2026-06-14",
       "lastSeen": "2026-06-14",
       "dismissed": false,
-      "dismissedAt": null
+      "dismissedAt": null,
+      "canonicalLink": "https://lu.ma/bitcoin-ytye",
+      "going": false,
+      "goingAt": null
     },
     {
       "id": "built-in-nyc-vercel-2026-06-27",
@@ -231,7 +264,10 @@
       "firstSeen": "2026-06-14",
       "lastSeen": "2026-06-14",
       "dismissed": false,
-      "dismissedAt": null
+      "dismissedAt": null,
+      "canonicalLink": "https://lu.ma/qoh1n3gd",
+      "going": false,
+      "goingAt": null
     },
     {
       "id": "iacc-refer-a-friend-aperitivo-2026-06-17",
@@ -240,11 +276,11 @@
       "end": "2026-06-17",
       "time": "",
       "dayOfWeek": "Wed",
-      "venue": "Eataly Café, Hudson Yards",
+      "venue": "New York City",
       "category": "italian",
       "source": "Italy-America Chamber of Commerce",
-      "link": "https://italchamber.org/civicrm/event/register?reset=1&id=691",
-      "description": "IACC summer networking aperitivo — bring a friend interested in the Chamber; light bites & drinks.",
+      "link": "https://italchamber.org/upcoming-events/",
+      "description": "Italy-America Chamber of Commerce Refer-a-Friend Aperitivo networking event.",
       "cost": "RSVP (price not listed)",
       "highSignal": false,
       "firstSeen": "2026-06-14",
@@ -252,7 +288,9 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://italchamber.org/upcoming-events/",
+      "sourceEventId": "iacc-refer-a-friend-aperitivo-2026-06-17"
     },
     {
       "id": "iacc-meet-the-member-piaggio-group-ameri-2026-06-23",
@@ -273,7 +311,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://italchamber.org/civicrm/event/register?reset=1&id=698"
     },
     {
       "id": "iacc-annual-membership-meeting-2026-06-26",
@@ -282,11 +321,11 @@
       "end": "2026-06-26",
       "time": "",
       "dayOfWeek": "Fri",
-      "venue": "Intesa Sanpaolo HQ, NYC",
+      "venue": "New York City",
       "category": "italian",
       "source": "Italy-America Chamber of Commerce",
-      "link": "https://italchamber.org/civicrm/event/register?reset=1&id=693",
-      "description": "IACC annual membership meeting — board announcements, year in review, new member initiatives. (Members)",
+      "link": "https://italchamber.org/upcoming-events/",
+      "description": "Italy-America Chamber of Commerce Annual Membership Meeting.",
       "cost": "Members",
       "highSignal": false,
       "firstSeen": "2026-06-14",
@@ -294,7 +333,9 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://italchamber.org/upcoming-events/",
+      "sourceEventId": "iacc-annual-membership-meeting-2026-06-26"
     },
     {
       "id": "nyu-stern-mba-visit-info-session-tour-q--2026-06-15",
@@ -315,7 +356,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://admissions.stern.nyu.edu/register/?id=599e2b75-7fec-490c-b614-8534aeefec4f"
     },
     {
       "id": "nyu-stern-mba-visit-info-session-q-a-2026-06-29",
@@ -336,7 +378,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://admissions.stern.nyu.edu/register/?id=e71eafe2-38d3-4d95-9b24-7382d43f4947"
     },
     {
       "id": "nyu-stern-mba-visit-info-session-q-a-2026-07-13",
@@ -357,7 +400,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://admissions.stern.nyu.edu/register/?id=e61fa32f-5513-4917-821e-2f6dbd8a8e4d"
     },
     {
       "id": "nyu-stern-mba-visit-info-session-q-a-2026-07-30",
@@ -378,7 +422,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://admissions.stern.nyu.edu/register/?id=82067fbb-72bb-4078-9755-8b9105bf1ec3"
     },
     {
       "id": "stanford-mba-msx-info-session-nyc-2026-07-07",
@@ -399,7 +444,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://applymbamsx.stanford.edu/register/?id=bcac48be-8782-4b15-b61c-5d771c3041f8"
     },
     {
       "id": "stanford-mba-msx-info-session-women-s-pe-2026-07-08",
@@ -420,7 +466,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://applymbamsx.stanford.edu/register/?id=dc31dfdb-75a3-47f5-9df0-ff990814ce1a"
     },
     {
       "id": "stanford-mba-msx-info-session-nyc-2026-08-10",
@@ -441,7 +488,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://applymbamsx.stanford.edu/register/?id=f312a87b-bddc-459d-b83d-69692f899fd0"
     },
     {
       "id": "nyu-stern-luxury-retail-mba-alumni-ama-2026-06-22",
@@ -462,7 +510,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://admissions.stern.nyu.edu/register/?id=cbb0cf0f-dd74-4ff6-a924-8a7fdcb83183"
     },
     {
       "id": "nyu-stern-fertitta-veterans-program-info-2026-06-24",
@@ -483,7 +532,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://admissions.stern.nyu.edu/register/?id=862d17bb-5e1e-41b9-a2c9-747885f05136"
     },
     {
       "id": "nyu-stern-andre-koo-tech-mba-info-sessio-2026-06-25",
@@ -504,7 +554,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://admissions.stern.nyu.edu/register/?id=a32de34f-defa-4007-a75d-0898f9e4842a"
     },
     {
       "id": "nyu-stern-ask-adcom-anything-2026-06-25",
@@ -525,7 +576,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://admissions.stern.nyu.edu/register/?id=b34b51b3-d05d-46c4-9c2c-19093cc27573"
     },
     {
       "id": "nyu-stern-ask-adcom-anything-2026-07-07",
@@ -546,7 +598,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://admissions.stern.nyu.edu/register/?id=cd757974-cdea-4fca-a8e8-7373c5423894"
     },
     {
       "id": "nyu-stern-mock-application-workshop-2026-07-08",
@@ -567,7 +620,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://admissions.stern.nyu.edu/register/?id=c3ced4a0-4b25-44f6-8130-e8ec311f31e4"
     },
     {
       "id": "nyu-stern-fertitta-veterans-program-info-2026-07-15",
@@ -588,7 +642,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://admissions.stern.nyu.edu/register/?id=d9fca1a4-cb4d-4728-be16-c2dd63ed3bf7"
     },
     {
       "id": "nyu-stern-ask-adcom-anything-2026-07-21",
@@ -609,7 +664,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://admissions.stern.nyu.edu/register/?id=a5db872f-a362-4e43-ba89-3f6c664ea064"
     },
     {
       "id": "nyu-stern-mock-application-workshop-2026-07-22",
@@ -630,7 +686,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://admissions.stern.nyu.edu/register/?id=639e6550-c493-4ff5-bede-e8d259d520cb"
     },
     {
       "id": "stanford-msx-info-session-virtual-2026-06-23",
@@ -651,7 +708,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://applymbamsx.stanford.edu/register/?id=0822ba5f-7e98-4c1f-9952-77981b3906fb"
     },
     {
       "id": "stanford-gsb-application-walkthrough-2026-06-25",
@@ -672,7 +730,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://applymbamsx.stanford.edu/register/?id=ab5642e5-6dc1-4467-9fd6-f82fcee6a022"
     },
     {
       "id": "stanford-gsb-first-fridays-career-manage-2026-07-02",
@@ -693,7 +752,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://applymbamsx.stanford.edu/register/?id=31477a64-5f99-4c09-ab69-838d0bd81eae"
     },
     {
       "id": "stanford-msx-info-session-virtual-2026-07-09",
@@ -714,7 +774,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://applymbamsx.stanford.edu/register/?id=73ea628f-9986-4ac4-a866-201fdf3bd735"
     },
     {
       "id": "stanford-gsb-ask-an-admissions-officer-2026-07-10",
@@ -735,7 +796,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://applymbamsx.stanford.edu/register/?id=38838b46-3ce2-455b-9ddc-e5add1cf5821"
     },
     {
       "id": "stanford-gsb-meet-an-admissions-officer--2026-07-14",
@@ -756,7 +818,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://applymbamsx.stanford.edu/register/?id=f9072b81-96c1-4d1c-b405-697e6a8ef54b"
     },
     {
       "id": "stanford-msx-application-workshop-2026-07-16",
@@ -777,7 +840,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://applymbamsx.stanford.edu/register/?id=d76e5204-2c8b-415a-9e48-59934383ee6c"
     },
     {
       "id": "stanford-msx-info-session-virtual-2026-07-21",
@@ -798,7 +862,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://applymbamsx.stanford.edu/register/?id=3a798fd0-2da3-4713-867c-addd2d5a8c31"
     },
     {
       "id": "stanford-msx-coffee-chat-with-alumni-2026-07-29",
@@ -819,7 +884,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://applymbamsx.stanford.edu/register/?id=68d32d87-5be6-4587-a067-75f4867b146e"
     },
     {
       "id": "mit-sloan-fellows-mba-virtual-info-sessi-2026-06-23",
@@ -840,7 +906,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://applymitsloan.mit.edu/register/SFMBAVirtualInfoSess6.23.26"
     },
     {
       "id": "mit-sloan-fellows-mba-virtual-info-sessi-2026-07-22",
@@ -861,7 +928,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://applymitsloan.mit.edu/register/SFMBAVirtualInfoSess7.22.26"
     },
     {
       "id": "insead-mba-spotlight-on-north-america-ap-2026-06-16",
@@ -882,7 +950,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://www.insead.edu/form/event-registration?business_group=DP&programme_code=mba&nid=861331"
     },
     {
       "id": "insead-mba-women-demystify-the-gmat-2026-06-22",
@@ -903,7 +972,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://www.insead.edu/form/event-registration?business_group=DP&programme_code=mba&nid=861086"
     },
     {
       "id": "insead-mba-ask-us-anything-2026-06-24",
@@ -924,7 +994,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://www.insead.edu/form/event-registration?business_group=DP&programme_code=mba&nid=855381"
     },
     {
       "id": "insead-mba-essential-tips-for-your-appli-2026-07-09",
@@ -945,7 +1016,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://www.insead.edu/form/event-registration?business_group=DP&programme_code=mba&nid=861406"
     },
     {
       "id": "insead-mba-ask-us-anything-2026-07-29",
@@ -966,7 +1038,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://www.insead.edu/form/event-registration?programme_code=mba&nid=855346"
     },
     {
       "id": "insead-mba-inside-insead-mba-2026-08-13",
@@ -987,7 +1060,8 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
-      "goingAt": null
+      "goingAt": null,
+      "canonicalLink": "https://www.insead.edu/form/event-registration?business_group=DP&programme_code=mba&nid=860056"
     },
     {
       "id": "insead-mba-ask-us-anything-2026-08-26",
@@ -1008,7 +1082,273 @@
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
+      "goingAt": null,
+      "canonicalLink": "https://www.insead.edu/form/event-registration?business_group=DP&programme_code=mba&nid=855386"
+    },
+    {
+      "id": "ai-engineers-poker-game-night-2026-06-18",
+      "name": "AI Engineers: Poker & Game Night",
+      "start": "2026-06-18",
+      "end": "2026-06-18",
+      "time": "7:00 PM ET",
+      "dayOfWeek": "Thu",
+      "venue": "Brooklyn (Kings County), NYC",
+      "category": "ai",
+      "source": "Luma — NYC Discover",
+      "link": "https://luma.com/tnrddj45",
+      "canonicalLink": "https://luma.com/tnrddj45",
+      "sourceEventId": "tnrddj45",
+      "description": "AI engineers community poker and game night.",
+      "cost": "",
+      "highSignal": false,
+      "firstSeen": "2026-06-14",
+      "lastSeen": "2026-06-14",
+      "dismissed": false,
+      "dismissedAt": null,
+      "going": false,
+      "goingAt": null
+    },
+    {
+      "id": "ai-engineers-presents-founders-to-follow-2026-06-24",
+      "name": "AI Engineers Presents: Founders to Follow",
+      "start": "2026-06-24",
+      "end": "2026-06-24",
+      "time": "6:00 PM ET",
+      "dayOfWeek": "Wed",
+      "venue": "Brooklyn, NYC",
+      "category": "ai",
+      "source": "Luma — NYC Discover",
+      "link": "https://luma.com/lo17rr1c",
+      "canonicalLink": "https://luma.com/lo17rr1c",
+      "sourceEventId": "lo17rr1c",
+      "description": "AI Engineers community event spotlighting founders to follow.",
+      "cost": "",
+      "highSignal": false,
+      "firstSeen": "2026-06-14",
+      "lastSeen": "2026-06-14",
+      "dismissed": false,
+      "dismissedAt": null,
+      "going": false,
+      "goingAt": null
+    },
+    {
+      "id": "nyc-ai-demos-10-2026-06-24",
+      "name": "NYC AI Demos #10",
+      "start": "2026-06-24",
+      "end": "2026-06-24",
+      "time": "6:00 PM ET",
+      "dayOfWeek": "Wed",
+      "venue": "The Refinery at Domino Offices, 300 Kent Ave, Brooklyn",
+      "category": "ai",
+      "source": "Luma — NYC Discover",
+      "link": "https://luma.com/nyc10",
+      "canonicalLink": "https://luma.com/nyc10",
+      "sourceEventId": "nyc10",
+      "description": "Tenth edition of the NYC AI Demos showcase.",
+      "cost": "",
+      "highSignal": false,
+      "firstSeen": "2026-06-14",
+      "lastSeen": "2026-06-14",
+      "dismissed": false,
+      "dismissedAt": null,
+      "going": false,
+      "goingAt": null
+    },
+    {
+      "id": "new-york-redefining-leadership-an-evenin-2026-06-15",
+      "name": "New York — Redefining Leadership: An Evening with Claudia Parzani",
+      "start": "2026-06-15",
+      "end": "2026-06-15",
+      "time": "",
+      "dayOfWeek": "Mon",
+      "venue": "New York City",
+      "category": "bocconi",
+      "source": "Friends of Bocconi USA",
+      "link": "https://friendsofbocconiusa.org/events/event/new-york-redefining-leadership-an-evening-with-claudia-parzani/",
+      "canonicalLink": "https://friendsofbocconiusa.org/events/event/new-york-redefining-leadership-an-evening-with-claudia-parzani/",
+      "sourceEventId": "fobusa-redefining-leadership-parzani-2026-06-15",
+      "description": "Friends of Bocconi USA evening with Claudia Parzani on redefining leadership.",
+      "cost": "",
+      "highSignal": true,
+      "firstSeen": "2026-06-14",
+      "lastSeen": "2026-06-14",
+      "dismissed": false,
+      "dismissedAt": null,
+      "going": false,
+      "goingAt": null
+    },
+    {
+      "id": "meet-the-member-piaggio-group-americas-2026-06-23",
+      "name": "Meet The Member — Piaggio Group Americas",
+      "start": "2026-06-23",
+      "end": "2026-06-23",
+      "time": "",
+      "dayOfWeek": "Tue",
+      "venue": "New York City",
+      "category": "italian",
+      "source": "Italy-America Chamber of Commerce",
+      "link": "https://italchamber.org/upcoming-events/",
+      "canonicalLink": "https://italchamber.org/upcoming-events/",
+      "sourceEventId": "iacc-meet-the-member-piaggio-2026-06-23",
+      "description": "Italy-America Chamber of Commerce Meet The Member session with Piaggio Group Americas.",
+      "cost": "",
+      "highSignal": false,
+      "firstSeen": "2026-06-14",
+      "lastSeen": "2026-06-14",
+      "dismissed": false,
+      "dismissedAt": null,
+      "going": false,
+      "goingAt": null
+    },
+    {
+      "id": "sublime-italy-urbino-raphael-and-the-fla-2026-06-25",
+      "name": "Sublime Italy: Urbino, Raphael and the Flavors of Le Marche",
+      "start": "2026-06-25",
+      "end": "2026-06-25",
+      "time": "",
+      "dayOfWeek": "Thu",
+      "venue": "New York City",
+      "category": "italian",
+      "source": "Italy-America Chamber of Commerce",
+      "link": "https://italchamber.org/upcoming-events/",
+      "canonicalLink": "https://italchamber.org/upcoming-events/",
+      "sourceEventId": "iacc-sublime-italy-urbino-2026-06-25",
+      "description": "Italy-America Chamber of Commerce cultural evening on Urbino, Raphael and the flavors of Le Marche.",
+      "cost": "",
+      "highSignal": false,
+      "firstSeen": "2026-06-14",
+      "lastSeen": "2026-06-14",
+      "dismissed": false,
+      "dismissedAt": null,
+      "going": false,
       "goingAt": null
     }
-  ]
+  ],
+  "collectionStatus": {
+    "runDate": "2026-06-14",
+    "overall": "yellow",
+    "renderCapability": "ok",
+    "sources": [
+      {
+        "source": "luma-blockchainnyc",
+        "url": "https://luma.com/blockchainnyc",
+        "requiredMethod": "render-required",
+        "status": "ok_empty_rendered",
+        "eventsFound": 0,
+        "evidence": "Browser rendered calendar; public API calendar/get-items?period=future returned entries:[] (last activity Sept 2025 — calendar dormant). Genuine empty state."
+      },
+      {
+        "source": "luma-nyc-discover",
+        "url": "https://luma.com/nyc",
+        "requiredMethod": "render-required",
+        "status": "ok_events",
+        "eventsFound": 3,
+        "evidence": "Rendered NYC discover place feed via public discover/get-paginated-events (discplace-Izx1rQVSh8njYpP), 60 events; 3 AI events in window, 0 crypto. Crypto-specific Luma search is auth-gated (401), so crypto richness reduced this run."
+      },
+      {
+        "source": "cryptonomads",
+        "url": "https://cryptonomads.org/",
+        "requiredMethod": "render-or-proxy",
+        "status": "failed_blocked",
+        "eventsFound": 0,
+        "evidence": "HTTP 403 Cloudflare 'Just a moment...' managed-challenge on all paths. No proxy/render available (Bright Data & Apify MCP not configured; browser allowlist excludes domain)."
+      },
+      {
+        "source": "eventbrite-nyc-crypto",
+        "url": "https://www.eventbrite.com/d/ny--new-york/crypto/",
+        "requiredMethod": "fetch-then-render",
+        "status": "ok_empty_rendered",
+        "eventsFound": 0,
+        "evidence": "Rendered listings, but all results were generic investing/networking events (Girl Math, NY Traders Happy Hour, networking nights) — none crypto/web3/blockchain-themed; excluded per scope rule."
+      },
+      {
+        "source": "meetup-nyc-blockchain-3rd-thursday",
+        "url": "https://www.meetup.com/nyc-blockchain-network-monthly-3rd-thursday-meetup/events/",
+        "requiredMethod": "fetch-ok",
+        "status": "ok_empty_rendered",
+        "eventsFound": 0,
+        "evidence": "Server-rendered page shows 'No upcoming events' — valid empty state."
+      },
+      {
+        "source": "partiful",
+        "url": "https://partiful.com/",
+        "requiredMethod": "login-gated",
+        "status": "failed_login",
+        "eventsFound": 0,
+        "evidence": "Invite-gated; no public NYC crypto discovery surface. Skipped per best-effort policy."
+      },
+      {
+        "source": "bocconialumni-ny",
+        "url": "https://www.bocconialumni.it/permalink/group/new-york",
+        "requiredMethod": "login-gated",
+        "status": "failed_login",
+        "eventsFound": 0,
+        "evidence": "Alumni portal requires login; not reachable unauthenticated. NY Bocconi event captured instead via Friends of Bocconi USA cross-listing."
+      },
+      {
+        "source": "friends-of-bocconi-usa",
+        "url": "https://friendsofbocconiusa.org/events-calendar/",
+        "requiredMethod": "render-required",
+        "status": "ok_events",
+        "eventsFound": 1,
+        "evidence": "FullCalendar admin-ajax is nonce-gated (400); bypassed via plugin public ICS feed (?feed=eo-events, HTTP 200, 67 VEVENTs). 1 event in window (Claudia Parzani evening, 2026-06-15, NYC)."
+      },
+      {
+        "source": "italchamber",
+        "url": "https://italchamber.org/upcoming-events/",
+        "requiredMethod": "fetch-ok",
+        "status": "ok_events",
+        "eventsFound": 4,
+        "evidence": "Server-rendered list. 4 NYC in-person events in window; Zoom webinars and non-NYC (St. Louis) events excluded."
+      },
+      {
+        "source": "i3nyc",
+        "url": "https://www.i3nyc.org/events",
+        "requiredMethod": "fetch-ok",
+        "status": "ok_empty_rendered",
+        "eventsFound": 0,
+        "evidence": "Page shows 'Stay tuned for more events in 2026!' — valid empty state."
+      },
+      {
+        "source": "nyu-stern-ftmba",
+        "url": "https://admissions.stern.nyu.edu/portal/ftmbaevents",
+        "requiredMethod": "render-required",
+        "status": "failed_render_unavailable",
+        "eventsFound": 0,
+        "evidence": "Slate SPA: served HTML is a JS shell; events injected client-side via JS session token. No static iCal/feed (cmd=ical 405, .ics 404). No render path (Bright Data/Apify unconfigured, browser domain-blocked, WebFetch no-JS). Prior-run Stern entries remain in events.json and age by date — not re-confirmed this run."
+      },
+      {
+        "source": "stanford-msx",
+        "url": "https://www.gsb.stanford.edu/programs/msx/admission/events",
+        "requiredMethod": "render-required",
+        "status": "ok_events",
+        "eventsFound": 12,
+        "evidence": "Server-rendered enough for extraction; every near-term event matched prior-run register-link data exactly. 2 NYC in-person (Jul 7/8) + 1 NYC (Aug 10) + 9 online sessions in 90-day window."
+      },
+      {
+        "source": "mit-sloan-fellows",
+        "url": "https://mitsloan.mit.edu/mit-sloan-fellows-mba-program/admissions-events",
+        "requiredMethod": "render-required",
+        "status": "ok_events",
+        "eventsFound": 2,
+        "evidence": "Server-rendered; SFMBA virtual info sessions (Jun 23, Jul 22). Cambridge in-person visits excluded (non-NYC). No NYC in-person sessions."
+      },
+      {
+        "source": "insead-mba",
+        "url": "https://www.insead.edu/events/listing?field_categories%5B0%5D=master_programmes&field_event_programme%5B0%5D=mba",
+        "requiredMethod": "render-required",
+        "status": "ok_events",
+        "eventsFound": 7,
+        "evidence": "Server-rendered; 7 online MBA admissions webinars in 90-day window. In-person sessions are Paris/Fontainebleau/Singapore/Sydney (non-NYC, excluded). No NYC in-person."
+      },
+      {
+        "source": "kellogg-ftmba",
+        "url": "https://www.kellogg.northwestern.edu/admissions/admissions-events/",
+        "requiredMethod": "render-required",
+        "status": "ok_empty_rendered",
+        "eventsFound": 0,
+        "evidence": "Server-rendered partial: only non-NYC event visible (Alumni Panel in Manila, Jun 29). No Full-Time/One-Year MBA NYC in-person events in window. Evening/Weekend & Executive MBA excluded per rule."
+      }
+    ]
+  }
 }
