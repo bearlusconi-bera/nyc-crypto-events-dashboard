@@ -69,6 +69,8 @@
   .btn.disabled { opacity: .55; cursor: not-allowed; pointer-events: none; }
   .btn.go { background: var(--good); color: #05210d; }
   .b-go { background: rgba(63,185,80,.18); color: var(--good); }
+  .b-verified { background: rgba(63,185,80,.16); color: var(--good); }
+  .b-stale { background: rgba(240,180,41,.14); color: var(--crypto); border: 1px solid rgba(240,180,41,.4); }
   .card.going { border-color: rgba(63,185,80,.5); }
   .cost { font-size: 12px; color: var(--muted); margin-left: auto; }
   .gear { background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 8px; padding: 6px 10px; cursor: pointer; font-size: 13px; }
@@ -87,6 +89,19 @@
   .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--panel2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; font-size: 13px; opacity: 0; transition: opacity .2s; pointer-events: none; z-index: 10; }
   .toast.show { opacity: 1; }
   footer { color: var(--muted); font-size: 12px; margin-top: 30px; text-align: center; }
+  .quality { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; margin-bottom: 18px; }
+  .quality > summary { cursor: pointer; font-size: 14px; list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .quality > summary::-webkit-details-marker { display: none; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: none; }
+  .dot.green { background: var(--good); } .dot.yellow { background: var(--crypto); } .dot.red { background: var(--warn); }
+  .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+  @media (max-width: 640px) { .q-grid { grid-template-columns: 1fr; } }
+  .q-box { background: var(--panel2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
+  .q-box h4 { margin: 0 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+  .q-trust h4 { color: var(--good); } .q-check h4 { color: var(--crypto); }
+  .q-box ul { margin: 0; padding-left: 18px; font-size: 13px; }
+  .q-box li { margin: 4px 0; }
+  .q-note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
 </style>
 </head>
 <body>
@@ -102,6 +117,8 @@
   </header>
 
   <div class="stats" id="stats"></div>
+
+  <details class="quality" id="quality" open></details>
 
   <div class="controls">
     <input type="search" id="search" placeholder="Search events, venues, hosts…" />
@@ -217,6 +234,83 @@ function isNew(ev) {
   return dayDiff(todayMidnight(), parseDate(ev.firstSeen)) <= 7;
 }
 
+// Per-event trust: was it re-confirmed from the live source in the latest refresh?
+function freshnessBadge(ev) {
+  if (!ev.lastSeen || !DATA || !DATA.generated || bucketOf(ev) === "past") return "";
+  if (ev.lastSeen === DATA.generated)
+    return `<span class="badge b-verified" title="Re-confirmed from the live source during the latest refresh (${esc(DATA.generated)}).">✓ Verified ${fmt(DATA.generated)}</span>`;
+  return `<span class="badge b-stale" title="Carried over from a previous refresh — NOT re-confirmed on ${esc(DATA.generated)} (last seen ${esc(ev.lastSeen)}). Open RSVP to confirm it's still on.">⚠ Unconfirmed · last seen ${fmt(ev.lastSeen)}</span>`;
+}
+
+// ---- Data-quality / trust panel (reads events.json collectionStatus) ----
+const SRC_LABEL = {
+  "luma-crypto-search": "Luma crypto search (new-crypto discovery)",
+  "cryptonomads": "CryptoNomads aggregator",
+  "luma-blockchainnyc": "Blockchain NYC calendar",
+  "luma-nyc-discover": "Luma NYC discover (AI/dev)",
+  "eventbrite-crypto": "Eventbrite crypto",
+  "meetup-nyc-blockchain": "Meetup · NYC Blockchain",
+  "partiful": "Partiful",
+  "bocconialumni-ny": "Bocconi Alumni NY portal",
+  "friendsofbocconiusa": "Friends of Bocconi USA",
+  "italchamber": "Italy-America Chamber (Italian)",
+  "i3nyc": "Italian Innovators (i3)",
+  "nyu-stern-ftmba": "NYU Stern MBA",
+  "stanford-msx": "Stanford MBA/MSx",
+  "mit-sloan-fellows": "MIT Sloan Fellows",
+  "insead-mba": "INSEAD MBA",
+  "kellogg": "Kellogg MBA",
+};
+function shortReason(e) {
+  if (!e) return "";
+  let s = String(e).split(". ")[0];
+  return s.length > 95 ? s.slice(0, 92) + "…" : s;
+}
+function renderQuality() {
+  const host = $("#quality");
+  const cs = DATA && DATA.collectionStatus;
+  if (!host) return;
+  if (!cs) { host.style.display = "none"; return; }
+  const fname = (k) => SRC_LABEL[k] || k;
+  const src = Array.isArray(cs.sources) ? cs.sources : [];
+  const okEv = src.filter(s => s.status === "ok_events" && (s.eventsFound || 0) > 0);
+  const okNone = src.filter(s => s.status === "ok_empty_rendered" || (s.status === "ok_events" && (s.eventsFound || 0) === 0));
+  const failed = src.filter(s => s.status && (s.status.startsWith("failed") || s.status === "stale_content" || s.status === "ambiguous_no_date"));
+  const cryptoDegraded = cs.cryptoCoverage === "degraded";
+  const health = cs.overall || "yellow";
+
+  const stale = DATA.events.filter(e => bucketOf(e) !== "past" && !isDismissed(e) && e.lastSeen && DATA.generated && e.lastSeen !== DATA.generated);
+
+  const trust = [];
+  okEv.forEach(s => trust.push(`<b>${esc(fname(s.source))}</b> — ${s.eventsFound} event(s), verified ${esc(DATA.generated)}`));
+  if (okNone.length) trust.push(`Checked, no in-scope events: ${okNone.map(s => esc(fname(s.source))).join(", ")}`);
+  if (!trust.length) trust.push("No sources returned verified events this run.");
+
+  const check = [];
+  if (cryptoDegraded) {
+    const crit = failed.filter(s => ["luma-crypto-search", "cryptonomads"].includes(s.source)).map(s => esc(fname(s.source)));
+    check.push(`<b>New crypto events — degraded.</b> ${crit.join(" + ") || "Key crypto sources"} unavailable and crypto community calendars returned empty, so side-events (e.g. Permissionless IV) may be missing. <b>Check Luma crypto search & Permissionless manually.</b>`);
+  }
+  failed.filter(s => !["luma-crypto-search", "cryptonomads"].includes(s.source))
+        .forEach(s => check.push(`${esc(fname(s.source))} — <i>${esc((s.status || "").replace("failed_", "").replace(/_/g, " "))}</i>${s.evidence ? " (" + esc(shortReason(s.evidence)) + ")" : ""}`));
+  if (stale.length) check.push(`<b>${stale.length} event(s) tagged “⚠ Unconfirmed” below</b> — carried over, not re-checked this refresh. Open RSVP to confirm before relying.`);
+  if (!check.length) check.push("Nothing flagged — every source verified this run. ✓");
+
+  const dot = health === "green" ? "green" : health === "red" ? "red" : "yellow";
+  host.innerHTML = `
+    <summary>
+      <span class="dot ${dot}"></span>
+      <span>Data quality: <b>${esc(health)}</b> · refreshed ${esc(DATA.generated)}${cryptoDegraded ? ` · <span style="color:var(--crypto)">⚠ crypto discovery degraded</span>` : ""}</span>
+      <span style="color:var(--muted);margin-left:auto">what to trust / check ▾</span>
+    </summary>
+    <div class="q-grid">
+      <div class="q-box q-trust"><h4>✅ You can trust</h4><ul>${trust.map(t => `<li>${t}</li>`).join("")}</ul></div>
+      <div class="q-box q-check"><h4>⚠ Check manually</h4><ul>${check.map(t => `<li>${t}</li>`).join("")}</ul></div>
+    </div>
+    <div class="q-note">Per-event tags: <span class="badge b-verified">✓ Verified</span> re-confirmed from the live source this refresh · <span class="badge b-stale">⚠ Unconfirmed</span> carried over, verify before relying.</div>
+    ${cs.recoveryNote ? `<div class="q-note">ℹ ${esc(cs.recoveryNote)}</div>` : ""}`;
+}
+
 // ---- Rendering ----
 function render() {
   if (!DATA) return;
@@ -283,6 +377,7 @@ function card(ev) {
     `<span class="badge ${catBadge}">${esc(catLabel)}</span>`,
     ev.highSignal ? `<span class="badge b-hot">🔥 High signal</span>` : "",
     isNew(ev) ? `<span class="badge b-new">NEW</span>` : "",
+    freshnessBadge(ev),
     `<span class="badge b-src">${esc(ev.source)}</span>`,
   ].join("");
 
@@ -494,6 +589,7 @@ async function boot() {
     const w = DATA.window;
     $("#sub").innerHTML = `Tracking NYC crypto/web3, Bocconi, Italian, MBA/MS &amp; AI events · data last refreshed <b>${DATA.generated}</b>`;
     $("#footer").innerHTML = `Auto-refreshed weekly · <a href="https://github.com/${getRepo()}" target="_blank" rel="noopener">source</a> · removals ${getToken() ? "sync to GitHub" : "are local until you add a token (⚙︎ Sync)"}`;
+    renderQuality();
     render();
   } catch (e) {
     $("#list").innerHTML = `<div class="empty">Couldn't load events.json — ${esc(e.message)}</div>`;
