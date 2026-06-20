@@ -1,8 +1,8 @@
 {
-  "generated": "2026-06-18",
+  "generated": "2026-06-20",
   "window": {
-    "start": "2026-06-18",
-    "end": "2026-09-16"
+    "start": "2026-06-20",
+    "end": "2026-09-18"
   },
   "events": [
     {
@@ -307,7 +307,7 @@
       "cost": "RSVP (price not listed)",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-18",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -329,7 +329,7 @@
       "cost": "Members",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-18",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -440,7 +440,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-18",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -462,7 +462,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-18",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -704,7 +704,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -726,7 +726,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -748,7 +748,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -770,7 +770,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -792,7 +792,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -902,7 +902,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-18",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -968,7 +968,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -990,7 +990,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -1012,7 +1012,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -1194,7 +1194,7 @@
       "cost": "",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-18",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -1217,7 +1217,7 @@
       "cost": "",
       "highSignal": true,
       "firstSeen": "2026-06-18",
-      "lastSeen": "2026-06-18",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -1294,13 +1294,11 @@
     }
   ],
   "collectionStatus": {
-    "runDate": "2026-06-18",
+    "runDate": "2026-06-20",
     "overall": "yellow",
     "renderCapability": "partial",
-    "browserCapability": "ok",
-    "browserAllowedDomains": [
-      "luma.com"
-    ],
+    "browserCapability": "unavailable",
+    "browserAllowedDomains": [],
     "proxyCapability": "unavailable",
     "cryptoCoverage": "degraded",
     "sources": [
@@ -1310,15 +1308,15 @@
         "requiredMethod": "render-required",
         "status": "ok_empty_rendered",
         "eventsFound": 0,
-        "evidence": "Luma calendar API (cal-uZeBjyS9CoeLMTn) returned 0 future entries, 10 past, has_more=false; page redirects to period=past — genuine empty upcoming state."
+        "evidence": "Luma calendar API (cal-uZeBjyS9CoeLMTn) period=future returned 0 entries — genuine empty upcoming state. WebFetch on the SPA page returned an empty shell; API used as the rendered/server-data path since browser navigation hung (300s) and luma-only allowlist + no proxy."
       },
       {
         "source": "luma-nyc-discover",
         "url": "https://luma.com/",
         "requiredMethod": "render-required",
         "status": "ok_events",
-        "eventsFound": 7,
-        "evidence": "discover_place API (discplace-Izx1rQVSh8njYpP) returned 64 events through ~2026-07-01; zero crypto/web3 (light on crypto as expected); surfaced 7 NYC AI/dev events in window."
+        "eventsFound": 1,
+        "evidence": "discover_place API (discplace-Izx1rQVSh8njYpP) reachable via WebFetch; feed light on crypto (0 crypto/web3). Re-confirmed Finance Hack Lab 6/23 (ai). Other AI events already in dataset not re-surfaced by the summarizer this run, so their lastSeen left untouched."
       },
       {
         "source": "luma-crypto-search",
@@ -1326,7 +1324,7 @@
         "requiredMethod": "render-or-proxy",
         "status": "failed_login",
         "eventsFound": 0,
-        "evidence": "api.lu.ma/search/get-results returned 401 'You are not signed in.' — auth-gated, richest crypto source unavailable."
+        "evidence": "api.lu.ma/search/get-results is auth-gated (401 when not signed in). Richest crypto source unavailable; no browser render (navigate hung 300s) and no proxy (Bright Data/Apify MCP not configured)."
       },
       {
         "source": "cryptonomads",
@@ -1334,7 +1332,7 @@
         "requiredMethod": "render-or-proxy",
         "status": "failed_blocked",
         "eventsFound": 0,
-        "evidence": "WebFetch HTTP 403 Forbidden; browser navigation to domain not allowed (luma-only allowlist); no Bright Data/Apify proxy configured."
+        "evidence": "WebFetch HTTP 403 Forbidden. No browser render path (navigate to non-luma domain unavailable; navigate hung) and no Bright Data/Apify proxy configured."
       },
       {
         "source": "eventbrite-crypto",
@@ -1342,7 +1340,7 @@
         "requiredMethod": "fetch-then-render",
         "status": "ok_events",
         "eventsFound": 0,
-        "evidence": "Rendered; only recurring paid certification courses (Certified Crypto/Blockchain Associate, Metaverse 101, Tokenization of RWA) with generic 'New York' venue and 28-33+ repeat sessions — excluded as non-specific/likely virtual, no genuine community events."
+        "evidence": "WebFetch rendered the search results; only generic networking mixers and recurring evergreen paid course listings ('Tokenization of RWA using Blockchain', 'Metaverse 101') with generic 'New York' venue surfaced — excluded as non-specific/likely-virtual, consistent with prior-run curation. No genuine NYC crypto community events."
       },
       {
         "source": "meetup-nyc-blockchain",
@@ -1350,7 +1348,7 @@
         "requiredMethod": "fetch-ok",
         "status": "ok_empty_rendered",
         "eventsFound": 0,
-        "evidence": "Server-rendered 'No upcoming events'."
+        "evidence": "Server-rendered '0 upcoming events' — genuine empty state."
       },
       {
         "source": "partiful",
@@ -1374,7 +1372,7 @@
         "requiredMethod": "render-required",
         "status": "failed_render_unavailable",
         "eventsFound": 0,
-        "evidence": "FullCalendar JS widget returned no rendered content via WebFetch; browser allowlist luma-only; no proxy. Cross-listed events found via search (Connecting Minds 2026-03-02, Falconeri 2025-11-20) are both past."
+        "evidence": "FullCalendar JS widget returned only a 'Loading…' shell via WebFetch; no browser render (navigate hung 300s, non-luma domain) and no proxy. Cross-listing web search surfaced only org contact info, no concrete upcoming dated NYC events."
       },
       {
         "source": "italchamber",
@@ -1382,7 +1380,7 @@
         "requiredMethod": "fetch-ok",
         "status": "ok_events",
         "eventsFound": 3,
-        "evidence": "WebFetch rendered listing; 3 in-person NYC events in window (Piaggio 6/23, Sublime Italy/Met 6/25, Annual Membership/Intesa Sanpaolo 6/26); Zoom webinars excluded per in-person scope rule."
+        "evidence": "WebFetch rendered listing; 3 in-person NYC events in window re-confirmed (Piaggio 6/23, Sublime Italy/Met 6/25, Annual Membership/Intesa Sanpaolo 6/26). Zoom webinars (Veneto 6/22, US-Italy policies 6/24, FTC 6/29) excluded per in-person scope; Refer-a-Friend Aperitivo 7/29 and Luxury Summit 11/19 out of 14-day italian window."
       },
       {
         "source": "i3nyc",
@@ -1398,15 +1396,15 @@
         "requiredMethod": "render-required",
         "status": "failed_render_unavailable",
         "eventsFound": 0,
-        "evidence": "Slate portal is JS-only; WebFetch returned framework with no event listings; browser allowlist luma-only; no proxy. Existing NYU Stern events preserved untouched."
+        "evidence": "Slate portal is JS-only; WebFetch returned framework with no event listings. No browser render (navigate hung 300s, non-luma domain) and no proxy. Existing NYU Stern events preserved untouched (lastSeen not bumped)."
       },
       {
         "source": "stanford-msx",
         "url": "https://www.gsb.stanford.edu/programs/msx/admission/events",
         "requiredMethod": "render-required",
         "status": "ok_events",
-        "eventsFound": 2,
-        "evidence": "WebFetch rendered; 2 NYC in-person MBA/MSx info sessions 7/7 and 7/8 (7:00-9:00 PM, Off Campus)."
+        "eventsFound": 8,
+        "evidence": "WebFetch rendered server-side list; re-confirmed 2 NYC in-person info sessions (7/7, 7/8 Women's, 7-9 PM) + online webinars (6/23, 6/25, 7/2, 7/9, 7/10). Off-NYC in-person sessions (Bangkok, Singapore, Shanghai, Boston, LA, Taipei, HK, Jakarta) excluded per scope. Existing precise venues/links preserved (minimal re-confirm)."
       },
       {
         "source": "mit-sloan-fellows",
@@ -1414,15 +1412,15 @@
         "requiredMethod": "render-required",
         "status": "ok_events",
         "eventsFound": 1,
-        "evidence": "WebFetch rendered; no NYC in-person; 6/23 virtual info session (mba-online); Cambridge visit programs excluded (not NYC)."
+        "evidence": "WebFetch rendered; re-confirmed 6/23 SFMBA virtual info session (mba-online). Cambridge visit programs excluded (not NYC, not online)."
       },
       {
         "source": "insead-mba",
         "url": "https://www.insead.edu/events/listing?field_categories%5B0%5D=master_programmes&field_event_programme%5B0%5D=mba",
         "requiredMethod": "render-required",
         "status": "ok_events",
-        "eventsFound": 0,
-        "evidence": "WebFetch rendered 53 MBA events (online, Paris, Fontainebleau, Singapore, Sydney, Melbourne, Chicago); none in NYC in window."
+        "eventsFound": 3,
+        "evidence": "WebFetch rendered listing; re-confirmed 3 online English MBA webinars in window (6/22 Women Demystify GMAT, 6/24 Ask Us Anything, 7/9 Essential Tips). Paris/Fontainebleau/Singapore/Sydney in-person sessions excluded (not NYC). No NYC in-person INSEAD event."
       },
       {
         "source": "kellogg",
@@ -1430,7 +1428,7 @@
         "requiredMethod": "render-required",
         "status": "ok_events",
         "eventsFound": 0,
-        "evidence": "WebFetch rendered preview (Manila panel, virtual student chat, virtual EMBA panel); full event portal is separate Slate; no NYC Full-Time/One-Year MBA in-person event found."
+        "evidence": "WebFetch rendered preview; only a Full-Time MBA alumni panel in Manila (in-person, not NYC) found. No NYC in-person or online Full-Time/One-Year MBA event in window."
       }
     ]
   }
