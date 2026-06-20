@@ -149,10 +149,10 @@
       "source": "Luma",
       "link": "https://lu.ma/tbw_nyc",
       "description": "After-bell event by The Big Whale w/ Morgan Stanley, Morpho, Fireblocks, 21x — institutional onchain infra, tokenized collateral. Fireside + panel, limited seats.",
-      "cost": "Free tier + paid tiers",
+      "cost": "Registration full — waitlist available",
       "highSignal": true,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "canonicalLink": "https://lu.ma/tbw_nyc",
@@ -163,7 +163,7 @@
       "id": "tokenizethis-2026-06-23",
       "name": "TokenizeThis 2026",
       "start": "2026-06-23",
-      "end": "2026-06-25",
+      "end": "2026-06-23",
       "time": "8:00 AM–5:00 PM EDT",
       "dayOfWeek": "Tue–Thu",
       "venue": "The Glasshouse, 660 12th Ave, Fl 6 (Hell's Kitchen)",
@@ -174,7 +174,7 @@
       "cost": "Paid (3-Day / VIP / Exhibitor)",
       "highSignal": true,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "canonicalLink": "https://lu.ma/3armqtbg",
@@ -196,7 +196,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "canonicalLink": "https://lu.ma/conflux-dc1p",
@@ -218,7 +218,7 @@
       "cost": "Not specified",
       "highSignal": true,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "canonicalLink": "https://lu.ma/9akbzrxu",
@@ -240,7 +240,7 @@
       "cost": "Registration required",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "canonicalLink": "https://lu.ma/bitcoin-ytye",
@@ -366,7 +366,7 @@
       "end": "2026-06-29",
       "time": "4:00 PM EDT",
       "dayOfWeek": "Mon",
-      "venue": "NYU Stern School of Business, Greenwich Village",
+      "venue": "NYU Stern School of Business, 44 W 4th St, New York, NY 10012",
       "category": "mba",
       "source": "NYU Stern Admissions",
       "link": "https://admissions.stern.nyu.edu/register/?id=e71eafe2-38d3-4d95-9b24-7382d43f4947",
@@ -374,7 +374,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -388,7 +388,7 @@
       "end": "2026-07-13",
       "time": "4:00 PM EDT",
       "dayOfWeek": "Mon",
-      "venue": "NYU Stern School of Business, Greenwich Village",
+      "venue": "NYU Stern School of Business, 44 W 4th St, New York, NY 10012",
       "category": "mba",
       "source": "NYU Stern Admissions",
       "link": "https://admissions.stern.nyu.edu/register/?id=e61fa32f-5513-4917-821e-2f6dbd8a8e4d",
@@ -396,7 +396,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -410,7 +410,7 @@
       "end": "2026-07-30",
       "time": "4:00 PM EDT",
       "dayOfWeek": "Thu",
-      "venue": "NYU Stern School of Business, Greenwich Village",
+      "venue": "NYU Stern School of Business, 44 W 4th St, New York, NY 10012",
       "category": "mba",
       "source": "NYU Stern Admissions",
       "link": "https://admissions.stern.nyu.edu/register/?id=82067fbb-72bb-4078-9755-8b9105bf1ec3",
@@ -418,7 +418,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -506,7 +506,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -572,7 +572,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-14",
+      "lastSeen": "2026-06-20",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -1207,7 +1207,7 @@
       "end": "2026-06-23",
       "time": "1:00 PM ET",
       "dayOfWeek": "Tuesday",
-      "venue": "New York City",
+      "venue": "Midtown East, New York, NY",
       "category": "ai",
       "source": "luma-nyc-discover",
       "link": "https://luma.com/financehacklabnyc",
@@ -1291,6 +1291,29 @@
       "dismissedAt": null,
       "going": false,
       "goingAt": null
+    },
+    {
+      "id": "friends-of-bocconi-inaugural-italian-alu-2026-06-30",
+      "name": "Friends of Bocconi: Inaugural Italian Alumni Summer Rooftop Party",
+      "start": "2026-06-30",
+      "end": "2026-06-30",
+      "time": "6:30–9:30 PM EDT",
+      "dayOfWeek": "Tue",
+      "venue": "Spring Place Rooftop, 6 St Johns Lane, New York, NY 10013",
+      "category": "bocconi",
+      "source": "Friends of Bocconi USA",
+      "link": "https://friendsofbocconiusa.org/civicrm/event/register/?reset=1&id=160",
+      "canonicalLink": "https://friendsofbocconiusa.org/civicrm/event/register/?reset=1&id=160",
+      "sourceEventId": "CiviCRM_EventID_160",
+      "description": "Inaugural summer rooftop networking party for alumni of Italy's leading universities (Bocconi Alumni NYC Chapter). Drinks, light bites & Italian gelato; Italian Consul General Giuseppe Pastorello attending. Sponsored by Once Capital Management & WeRoad.",
+      "cost": "$35",
+      "highSignal": true,
+      "firstSeen": "2026-06-20",
+      "lastSeen": "2026-06-20",
+      "dismissed": false,
+      "dismissedAt": null,
+      "going": false,
+      "goingAt": null
     }
   ],
   "collectionStatus": {
@@ -1301,6 +1324,7 @@
     "browserAllowedDomains": [],
     "proxyCapability": "unavailable",
     "cryptoCoverage": "degraded",
+    "recoveryNote": "Browser hung (300s) and no proxy configured, so render-required sources were recovered via PUBLIC endpoints: Luma calendar/discover/event-page APIs, CiviCRM iCal feed, and Slate register deep-links. All 5 upcoming crypto events VERIFIED LIVE this run (not stale-preserved). cryptoCoverage stays 'degraded' because NEW-crypto discovery is blind: luma-crypto-search 401, cryptonomads WAF-403, and every probed crypto community calendar returned 0 future events.",
     "sources": [
       {
         "source": "luma-blockchainnyc",
@@ -1308,15 +1332,15 @@
         "requiredMethod": "render-required",
         "status": "ok_empty_rendered",
         "eventsFound": 0,
-        "evidence": "Luma calendar API (cal-uZeBjyS9CoeLMTn) period=future returned 0 entries — genuine empty upcoming state. WebFetch on the SPA page returned an empty shell; API used as the rendered/server-data path since browser navigation hung (300s) and luma-only allowlist + no proxy."
+        "evidence": "Luma calendar API (cal-uZeBjyS9CoeLMTn) period=future returned 0 entries — genuine empty upcoming state, re-verified this run."
       },
       {
         "source": "luma-nyc-discover",
-        "url": "https://luma.com/",
+        "url": "https://api.lu.ma/discover/get-paginated-events?discover_place_api_id=discplace-Izx1rQVSh8njYpP",
         "requiredMethod": "render-required",
         "status": "ok_events",
         "eventsFound": 1,
-        "evidence": "discover_place API (discplace-Izx1rQVSh8njYpP) reachable via WebFetch; feed light on crypto (0 crypto/web3). Re-confirmed Finance Hack Lab 6/23 (ai). Other AI events already in dataset not re-surfaced by the summarizer this run, so their lastSeen left untouched."
+        "evidence": "Direct discover-API JSON via WebFetch: has_more=false, 16 entries (complete single page), overwhelmingly arts/culture/social. Only 1 in-window tech event (Finance Hack Lab 6/23, already in dataset). Confirms last run's count of 1 was accurate, NOT a summarizer under-count. The other AI events in the dataset come from a different discover surface and were not in this payload."
       },
       {
         "source": "luma-crypto-search",
@@ -1324,7 +1348,7 @@
         "requiredMethod": "render-or-proxy",
         "status": "failed_login",
         "eventsFound": 0,
-        "evidence": "api.lu.ma/search/get-results is auth-gated (401 when not signed in). Richest crypto source unavailable; no browser render (navigate hung 300s) and no proxy (Bright Data/Apify MCP not configured)."
+        "evidence": "api.lu.ma/search/get-results still 401 auth-gated. MITIGATED: all 5 known upcoming crypto events were re-confirmed live by fetching their individual luma.com/<slug> pages directly, and host community calendars were queried (cryptomondays, permissionless, hackvc, sushi, stablecoin, thebigwhale via cal-ids) — all returned 0 future events. So existing crypto is verified-live; NEW-crypto discovery remains blind."
       },
       {
         "source": "cryptonomads",
@@ -1332,7 +1356,7 @@
         "requiredMethod": "render-or-proxy",
         "status": "failed_blocked",
         "eventsFound": 0,
-        "evidence": "WebFetch HTTP 403 Forbidden. No browser render path (navigate to non-luma domain unavailable; navigate hung) and no Bright Data/Apify proxy configured."
+        "evidence": "Site-wide WAF 403 on every path (root, /api/events, /events, /nyc, /_next/data, /sitemap.xml). r.jina.ai reader proxy bypassed the 403 but server HTML exposes only the global featured carousel (Berlin/Zurich/Amsterdam/Kyoto — non-NYC) and week-hubs whose NYC weeks fall outside 6/20-7/4; per-city cards load client-side from the 403'd /api/events. No in-window NYC event extractable; no browser to execute the client JS. Well-evidenced true negative."
       },
       {
         "source": "eventbrite-crypto",
@@ -1340,7 +1364,7 @@
         "requiredMethod": "fetch-then-render",
         "status": "ok_events",
         "eventsFound": 0,
-        "evidence": "WebFetch rendered the search results; only generic networking mixers and recurring evergreen paid course listings ('Tokenization of RWA using Blockchain', 'Metaverse 101') with generic 'New York' venue surfaced — excluded as non-specific/likely-virtual, consistent with prior-run curation. No genuine NYC crypto community events."
+        "evidence": "Rendered via WebFetch; only generic networking mixers and recurring evergreen paid course listings (generic 'New York' venue) — excluded as non-specific/likely-virtual, consistent with prior-run curation."
       },
       {
         "source": "meetup-nyc-blockchain",
@@ -1356,7 +1380,7 @@
         "requiredMethod": "login-gated",
         "status": "failed_login",
         "eventsFound": 0,
-        "evidence": "Invite/login-gated; no public discovery surface available."
+        "evidence": "Invite/login-gated; no public discovery surface available (not re-probed this run)."
       },
       {
         "source": "bocconialumni-ny",
@@ -1364,15 +1388,15 @@
         "requiredMethod": "login-gated",
         "status": "failed_login",
         "eventsFound": 0,
-        "evidence": "Alumni portal login-gated; not publicly accessible."
+        "evidence": "Alumni portal login-gated; the NYC chapter's public events are surfaced instead via Friends of Bocconi USA CiviCRM (see below)."
       },
       {
         "source": "friendsofbocconiusa",
-        "url": "https://friendsofbocconiusa.org/events-calendar/",
+        "url": "https://friendsofbocconiusa.org/civicrm/event/ical?reset=1",
         "requiredMethod": "render-required",
-        "status": "failed_render_unavailable",
-        "eventsFound": 0,
-        "evidence": "FullCalendar JS widget returned only a 'Loading…' shell via WebFetch; no browser render (navigate hung 300s, non-luma domain) and no proxy. Cross-listing web search surfaced only org contact info, no concrete upcoming dated NYC events."
+        "status": "ok_events",
+        "eventsFound": 1,
+        "evidence": "RECOVERED via CiviCRM iCal feed (The Events Calendar/tribe plugin is NOT installed; calendar is CiviCRM-driven). Feed returned 1 upcoming VEVENT (id 160) confirmed across iCal + info page + open register page: 'Inaugural Italian Alumni Summer Rooftop Party' 6/30, 6:30-9:30 PM, Spring Place Rooftop 6 St Johns Lane NY 10013, $35. CiviCRM ids 161/162 returned 403 (not public) and were excluded. Parzani (id 159, 6/15) confirmed live but past-window."
       },
       {
         "source": "italchamber",
@@ -1380,7 +1404,7 @@
         "requiredMethod": "fetch-ok",
         "status": "ok_events",
         "eventsFound": 3,
-        "evidence": "WebFetch rendered listing; 3 in-person NYC events in window re-confirmed (Piaggio 6/23, Sublime Italy/Met 6/25, Annual Membership/Intesa Sanpaolo 6/26). Zoom webinars (Veneto 6/22, US-Italy policies 6/24, FTC 6/29) excluded per in-person scope; Refer-a-Friend Aperitivo 7/29 and Luxury Summit 11/19 out of 14-day italian window."
+        "evidence": "WebFetch rendered listing; 3 in-person NYC events in window re-confirmed (Piaggio 6/23, Sublime Italy/Met 6/25, Annual Membership/Intesa Sanpaolo 6/26). Zoom webinars excluded per in-person scope; 7/29 aperitivo + 11/19 summit out of 14-day window."
       },
       {
         "source": "i3nyc",
@@ -1394,9 +1418,9 @@
         "source": "nyu-stern-ftmba",
         "url": "https://admissions.stern.nyu.edu/portal/ftmbaevents",
         "requiredMethod": "render-required",
-        "status": "failed_render_unavailable",
-        "eventsFound": 0,
-        "evidence": "Slate portal is JS-only; WebFetch returned framework with no event listings. No browser render (navigate hung 300s, non-luma domain) and no proxy. Existing NYU Stern events preserved untouched (lastSeen not bumped)."
+        "status": "ok_events",
+        "eventsFound": 5,
+        "evidence": "Slate SPA + all feed variants unusable (?cmd=ics/feed/json -> 405; ?output=ics/feed.ics -> empty shell; manage/query/run -> 503). RECOVERED via per-event register/?id=UUID deep-links (server-rendered): re-confirmed 5 in-window events live (3 in-person 6/29, 7/13, 7/30 at 44 W 4th St + 2 online 6/22, 6/25). 6/15 session now past + registration closed -> excluded. No NEW in-person FT MBA events discoverable without a browser to enumerate the full portal."
       },
       {
         "source": "stanford-msx",
@@ -1404,7 +1428,7 @@
         "requiredMethod": "render-required",
         "status": "ok_events",
         "eventsFound": 8,
-        "evidence": "WebFetch rendered server-side list; re-confirmed 2 NYC in-person info sessions (7/7, 7/8 Women's, 7-9 PM) + online webinars (6/23, 6/25, 7/2, 7/9, 7/10). Off-NYC in-person sessions (Bangkok, Singapore, Shanghai, Boston, LA, Taipei, HK, Jakarta) excluded per scope. Existing precise venues/links preserved (minimal re-confirm)."
+        "evidence": "WebFetch rendered server-side list; re-confirmed 2 NYC in-person info sessions (7/7, 7/8 Women's) + online webinars (6/23, 6/25, 7/2, 7/9, 7/10). Off-NYC in-person sessions excluded. Existing precise venues/links preserved (minimal re-confirm)."
       },
       {
         "source": "mit-sloan-fellows",
@@ -1412,7 +1436,7 @@
         "requiredMethod": "render-required",
         "status": "ok_events",
         "eventsFound": 1,
-        "evidence": "WebFetch rendered; re-confirmed 6/23 SFMBA virtual info session (mba-online). Cambridge visit programs excluded (not NYC, not online)."
+        "evidence": "WebFetch rendered; re-confirmed 6/23 SFMBA virtual info session (mba-online). Cambridge visit programs excluded (not NYC/online)."
       },
       {
         "source": "insead-mba",
@@ -1420,7 +1444,7 @@
         "requiredMethod": "render-required",
         "status": "ok_events",
         "eventsFound": 3,
-        "evidence": "WebFetch rendered listing; re-confirmed 3 online English MBA webinars in window (6/22 Women Demystify GMAT, 6/24 Ask Us Anything, 7/9 Essential Tips). Paris/Fontainebleau/Singapore/Sydney in-person sessions excluded (not NYC). No NYC in-person INSEAD event."
+        "evidence": "WebFetch rendered listing; re-confirmed 3 online English MBA webinars in window (6/22, 6/24, 7/9). Paris/Fontainebleau/Singapore/Sydney in-person sessions excluded (not NYC)."
       },
       {
         "source": "kellogg",
@@ -1428,7 +1452,7 @@
         "requiredMethod": "render-required",
         "status": "ok_events",
         "eventsFound": 0,
-        "evidence": "WebFetch rendered preview; only a Full-Time MBA alumni panel in Manila (in-person, not NYC) found. No NYC in-person or online Full-Time/One-Year MBA event in window."
+        "evidence": "WebFetch rendered preview; only a Full-Time MBA alumni panel in Manila (not NYC) found. No NYC in-person or online Full-Time/One-Year MBA event in window."
       }
     ]
   }
