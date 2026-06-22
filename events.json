@@ -1,8 +1,8 @@
 {
-  "generated": "2026-06-20",
+  "generated": "2026-06-22",
   "window": {
-    "start": "2026-06-20",
-    "end": "2026-09-18"
+    "start": "2026-06-22",
+    "end": "2026-09-20"
   },
   "events": [
     {
@@ -307,7 +307,7 @@
       "cost": "RSVP (price not listed)",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-06-22",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -329,7 +329,7 @@
       "cost": "Members",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-06-22",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -440,7 +440,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-06-22",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -462,7 +462,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-06-22",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -902,7 +902,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-06-22",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -959,7 +959,7 @@
       "start": "2026-06-22",
       "end": "2026-06-22",
       "time": "10:00 AM ET",
-      "dayOfWeek": "Mon",
+      "dayOfWeek": "Monday",
       "venue": "Online",
       "category": "mba-online",
       "source": "INSEAD MBA Admissions",
@@ -968,7 +968,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-06-22",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -981,7 +981,7 @@
       "start": "2026-06-24",
       "end": "2026-06-24",
       "time": "7:00 AM ET",
-      "dayOfWeek": "Wed",
+      "dayOfWeek": "Wednesday",
       "venue": "Online",
       "category": "mba-online",
       "source": "INSEAD MBA Admissions",
@@ -990,7 +990,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-06-22",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -1003,7 +1003,7 @@
       "start": "2026-07-09",
       "end": "2026-07-09",
       "time": "11:00 AM ET",
-      "dayOfWeek": "Thu",
+      "dayOfWeek": "Thursday",
       "venue": "Online",
       "category": "mba-online",
       "source": "INSEAD MBA Admissions",
@@ -1012,7 +1012,7 @@
       "cost": "Free",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-06-22",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -1125,7 +1125,7 @@
       "cost": "",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-18",
+      "lastSeen": "2026-06-22",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -1148,7 +1148,7 @@
       "cost": "",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-18",
+      "lastSeen": "2026-06-22",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -1194,7 +1194,7 @@
       "cost": "",
       "highSignal": false,
       "firstSeen": "2026-06-14",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-06-22",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -1217,7 +1217,7 @@
       "cost": "",
       "highSignal": true,
       "firstSeen": "2026-06-18",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-06-22",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -1240,7 +1240,7 @@
       "cost": "",
       "highSignal": false,
       "firstSeen": "2026-06-18",
-      "lastSeen": "2026-06-18",
+      "lastSeen": "2026-06-22",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -1298,7 +1298,7 @@
       "start": "2026-06-30",
       "end": "2026-06-30",
       "time": "6:30–9:30 PM EDT",
-      "dayOfWeek": "Tue",
+      "dayOfWeek": "Tuesday",
       "venue": "Spring Place Rooftop, 6 St Johns Lane, New York, NY 10013",
       "category": "bocconi",
       "source": "Friends of Bocconi USA",
@@ -1309,7 +1309,53 @@
       "cost": "$35",
       "highSignal": true,
       "firstSeen": "2026-06-20",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-06-22",
+      "dismissed": false,
+      "dismissedAt": null,
+      "going": false,
+      "goingAt": null
+    },
+    {
+      "id": "kleiner-perkins-openevidence-ai-engineer-2026-06-23",
+      "name": "Kleiner Perkins × OpenEvidence: AI Engineers at the Frontier",
+      "start": "2026-06-23",
+      "end": "2026-06-23",
+      "time": "6:30 PM ET",
+      "dayOfWeek": "Tuesday",
+      "venue": "Hudson Square, New York, NY",
+      "category": "ai",
+      "source": "Luma (NYC discover)",
+      "link": "",
+      "canonicalLink": "",
+      "sourceEventId": "evt-d4FbXr6EPjyqBB3",
+      "description": "AI engineering talk hosted by Kleiner Perkins and OpenEvidence.",
+      "cost": "",
+      "highSignal": true,
+      "firstSeen": "2026-06-22",
+      "lastSeen": "2026-06-22",
+      "dismissed": false,
+      "dismissedAt": null,
+      "going": false,
+      "goingAt": null
+    },
+    {
+      "id": "insead-mba-spotlight-on-france-mba-appli-2026-06-25",
+      "name": "INSEAD MBA: Spotlight on France — MBA Application Workshop",
+      "start": "2026-06-25",
+      "end": "2026-06-25",
+      "time": "",
+      "dayOfWeek": "Thursday",
+      "venue": "Online",
+      "category": "mba-online",
+      "source": "INSEAD events listing",
+      "link": "https://www.insead.edu/events/listing?field_categories%5B0%5D=master_programmes&field_event_programme%5B0%5D=mba",
+      "canonicalLink": "https://www.insead.edu/events/listing?field_categories%5B0%5D=master_programmes&field_event_programme%5B0%5D=mba",
+      "sourceEventId": "",
+      "description": "Online INSEAD MBA application workshop (Spotlight on France).",
+      "cost": "",
+      "highSignal": false,
+      "firstSeen": "2026-06-22",
+      "lastSeen": "2026-06-22",
       "dismissed": false,
       "dismissedAt": null,
       "going": false,
@@ -1317,14 +1363,15 @@
     }
   ],
   "collectionStatus": {
-    "runDate": "2026-06-20",
+    "runDate": "2026-06-22",
     "overall": "yellow",
     "renderCapability": "partial",
-    "browserCapability": "unavailable",
-    "browserAllowedDomains": [],
+    "browserCapability": "ok",
+    "browserAllowedDomains": [
+      "luma.com"
+    ],
     "proxyCapability": "unavailable",
     "cryptoCoverage": "degraded",
-    "recoveryNote": "Browser hung (300s) and no proxy configured, so render-required sources were recovered via PUBLIC endpoints: Luma calendar/discover/event-page APIs, CiviCRM iCal feed, and Slate register deep-links. All 5 upcoming crypto events VERIFIED LIVE this run (not stale-preserved). cryptoCoverage stays 'degraded' because NEW-crypto discovery is blind: luma-crypto-search 401, cryptonomads WAF-403, and every probed crypto community calendar returned 0 future events.",
     "sources": [
       {
         "source": "luma-blockchainnyc",
@@ -1332,23 +1379,23 @@
         "requiredMethod": "render-required",
         "status": "ok_empty_rendered",
         "eventsFound": 0,
-        "evidence": "Luma calendar API (cal-uZeBjyS9CoeLMTn) period=future returned 0 entries — genuine empty upcoming state, re-verified this run."
+        "evidence": "Browser rendered the calendar; public calendar API get-items (cal-uZeBjyS9CoeLMTn, period=future) returned an empty entries array."
       },
       {
         "source": "luma-nyc-discover",
         "url": "https://api.lu.ma/discover/get-paginated-events?discover_place_api_id=discplace-Izx1rQVSh8njYpP",
         "requiredMethod": "render-required",
         "status": "ok_events",
-        "eventsFound": 1,
-        "evidence": "Direct discover-API JSON via WebFetch: has_more=false, 16 entries (complete single page), overwhelmingly arts/culture/social. Only 1 in-window tech event (Finance Hack Lab 6/23, already in dataset). Confirms last run's count of 1 was accurate, NOT a summarizer under-count. The other AI events in the dataset come from a different discover surface and were not in this payload."
+        "eventsFound": 14,
+        "evidence": "Public discover API returned 14 NYC events (page 1, all 6/22-6/24). Light on crypto; AI/dev ones categorized 'ai'. Lifestyle/general events excluded (no matching category)."
       },
       {
         "source": "luma-crypto-search",
-        "url": "https://luma.com/",
-        "requiredMethod": "render-or-proxy",
+        "url": "https://api.lu.ma/search/get-results",
+        "requiredMethod": "login-gated",
         "status": "failed_login",
         "eventsFound": 0,
-        "evidence": "api.lu.ma/search/get-results still 401 auth-gated. MITIGATED: all 5 known upcoming crypto events were re-confirmed live by fetching their individual luma.com/<slug> pages directly, and host community calendars were queried (cryptomondays, permissionless, hackvc, sushi, stablecoin, thebigwhale via cal-ids) — all returned 0 future events. So existing crypto is verified-live; NEW-crypto discovery remains blind."
+        "evidence": "api.lu.ma/search/get-results is auth-gated (401 when not signed in). Richest crypto surface unavailable."
       },
       {
         "source": "cryptonomads",
@@ -1356,15 +1403,55 @@
         "requiredMethod": "render-or-proxy",
         "status": "failed_blocked",
         "eventsFound": 0,
-        "evidence": "Site-wide WAF 403 on every path (root, /api/events, /events, /nyc, /_next/data, /sitemap.xml). r.jina.ai reader proxy bypassed the 403 but server HTML exposes only the global featured carousel (Berlin/Zurich/Amsterdam/Kyoto — non-NYC) and week-hubs whose NYC weeks fall outside 6/20-7/4; per-city cards load client-side from the 403'd /api/events. No in-window NYC event extractable; no browser to execute the client JS. Well-evidenced true negative."
+        "evidence": "/api/events returned HTTP 403; r.jina.ai returned only nav shell (events load via XHR, no JS executed); browser not allowlisted for this domain; no proxy configured."
+      },
+      {
+        "source": "luma-cryptomondays",
+        "url": "https://api.lu.ma/calendar/get-items?calendar_api_id=cal-ACCCqya72K4PM80&period=future",
+        "requiredMethod": "render-required",
+        "status": "ok_empty_rendered",
+        "eventsFound": 0,
+        "evidence": "Calendar API future entries array empty."
+      },
+      {
+        "source": "luma-permissionless",
+        "url": "https://api.lu.ma/calendar/get-items?calendar_api_id=cal-g3QPbacFgWSl76S&period=future",
+        "requiredMethod": "render-required",
+        "status": "ok_empty_rendered",
+        "eventsFound": 0,
+        "evidence": "Calendar API future entries array empty."
+      },
+      {
+        "source": "luma-stablecoin",
+        "url": "https://api.lu.ma/calendar/get-items?calendar_api_id=cal-JexBEyiestQP9ZT&period=future",
+        "requiredMethod": "render-required",
+        "status": "ok_empty_rendered",
+        "eventsFound": 0,
+        "evidence": "Calendar API future entries array empty."
+      },
+      {
+        "source": "luma-thebigwhale",
+        "url": "https://api.lu.ma/calendar/get-items?calendar_api_id=cal-lRWV3BVtOKjl1wh&period=future",
+        "requiredMethod": "render-required",
+        "status": "ok_empty_rendered",
+        "eventsFound": 0,
+        "evidence": "Calendar API future entries array empty."
+      },
+      {
+        "source": "luma-sushi",
+        "url": "https://api.lu.ma/calendar/get-items?calendar_api_id=cal-Jo08CHZ0EadiRYY&period=future",
+        "requiredMethod": "render-required",
+        "status": "ok_empty_rendered",
+        "eventsFound": 0,
+        "evidence": "Calendar API future entries array empty."
       },
       {
         "source": "eventbrite-crypto",
         "url": "https://www.eventbrite.com/d/ny--new-york/crypto/",
         "requiredMethod": "fetch-then-render",
-        "status": "ok_events",
+        "status": "failed_blocked",
         "eventsFound": 0,
-        "evidence": "Rendered via WebFetch; only generic networking mixers and recurring evergreen paid course listings (generic 'New York' venue) — excluded as non-specific/likely-virtual, consistent with prior-run curation."
+        "evidence": "WebFetch returned HTTP 405 Method Not Allowed; browser not allowlisted; no proxy configured."
       },
       {
         "source": "meetup-nyc-blockchain",
@@ -1372,7 +1459,7 @@
         "requiredMethod": "fetch-ok",
         "status": "ok_empty_rendered",
         "eventsFound": 0,
-        "evidence": "Server-rendered '0 upcoming events' — genuine empty state."
+        "evidence": "Server-rendered page shows 0 upcoming events (valid empty state)."
       },
       {
         "source": "partiful",
@@ -1380,7 +1467,7 @@
         "requiredMethod": "login-gated",
         "status": "failed_login",
         "eventsFound": 0,
-        "evidence": "Invite/login-gated; no public discovery surface available (not re-probed this run)."
+        "evidence": "Invite-gated with no public discovery surface; skipped per source notes."
       },
       {
         "source": "bocconialumni-ny",
@@ -1388,15 +1475,15 @@
         "requiredMethod": "login-gated",
         "status": "failed_login",
         "eventsFound": 0,
-        "evidence": "Alumni portal login-gated; the NYC chapter's public events are surfaced instead via Friends of Bocconi USA CiviCRM (see below)."
+        "evidence": "Members-only chapter page; not publicly browsable. Rooftop party cross-confirmed via Friends of Bocconi CiviCRM."
       },
       {
-        "source": "friendsofbocconiusa",
-        "url": "https://friendsofbocconiusa.org/civicrm/event/ical?reset=1",
+        "source": "friendsofbocconi",
+        "url": "https://friendsofbocconiusa.org/events-calendar/",
         "requiredMethod": "render-required",
         "status": "ok_events",
         "eventsFound": 1,
-        "evidence": "RECOVERED via CiviCRM iCal feed (The Events Calendar/tribe plugin is NOT installed; calendar is CiviCRM-driven). Feed returned 1 upcoming VEVENT (id 160) confirmed across iCal + info page + open register page: 'Inaugural Italian Alumni Summer Rooftop Party' 6/30, 6:30-9:30 PM, Spring Place Rooftop 6 St Johns Lane NY 10013, $35. CiviCRM ids 161/162 returned 403 (not public) and were excluded. Parzani (id 159, 6/15) confirmed live but past-window."
+        "evidence": "events-calendar is a JS FullCalendar shell; EO iCal feed (?feed=eo-events) is stale (2016-2018 only). Rooftop Party (CiviCRM id=160, 6/30) re-confirmed live via its registration page ($35)."
       },
       {
         "source": "italchamber",
@@ -1404,7 +1491,7 @@
         "requiredMethod": "fetch-ok",
         "status": "ok_events",
         "eventsFound": 3,
-        "evidence": "WebFetch rendered listing; 3 in-person NYC events in window re-confirmed (Piaggio 6/23, Sublime Italy/Met 6/25, Annual Membership/Intesa Sanpaolo 6/26). Zoom webinars excluded per in-person scope; 7/29 aperitivo + 11/19 summit out of 14-day window."
+        "evidence": "WebFetch listing returned 10 events; 3 NYC in-person within window (Piaggio 6/23, Sublime Italy 6/25, Annual Membership 6/26). Zoom webinars excluded (italian category is in-person only)."
       },
       {
         "source": "i3nyc",
@@ -1412,23 +1499,23 @@
         "requiredMethod": "fetch-ok",
         "status": "ok_empty_rendered",
         "eventsFound": 0,
-        "evidence": "'Stay tuned for more events in 2026!' — genuine empty state."
+        "evidence": "Page shows 'Stay tuned for more events in 2026!' (valid empty state)."
       },
       {
-        "source": "nyu-stern-ftmba",
+        "source": "nyu-stern",
         "url": "https://admissions.stern.nyu.edu/portal/ftmbaevents",
         "requiredMethod": "render-required",
-        "status": "ok_events",
-        "eventsFound": 5,
-        "evidence": "Slate SPA + all feed variants unusable (?cmd=ics/feed/json -> 405; ?output=ics/feed.ics -> empty shell; manage/query/run -> 503). RECOVERED via per-event register/?id=UUID deep-links (server-rendered): re-confirmed 5 in-window events live (3 in-person 6/29, 7/13, 7/30 at 44 W 4th St + 2 online 6/22, 6/25). 6/15 session now past + registration closed -> excluded. No NEW in-person FT MBA events discoverable without a browser to enumerate the full portal."
+        "status": "failed_render_unavailable",
+        "eventsFound": 0,
+        "evidence": "Slate portal returns a JS shell via WebFetch; browser not allowlisted for this domain; no proxy. Existing Stern records preserved (not re-confirmed this run)."
       },
       {
         "source": "stanford-msx",
         "url": "https://www.gsb.stanford.edu/programs/msx/admission/events",
         "requiredMethod": "render-required",
         "status": "ok_events",
-        "eventsFound": 8,
-        "evidence": "WebFetch rendered server-side list; re-confirmed 2 NYC in-person info sessions (7/7, 7/8 Women's) + online webinars (6/23, 6/25, 7/2, 7/9, 7/10). Off-NYC in-person sessions excluded. Existing precise venues/links preserved (minimal re-confirm)."
+        "eventsFound": 2,
+        "evidence": "WebFetch rendered the listing. 2 NYC in-person sessions re-confirmed (7/7 McKinsey 3 WTC, 7/8 Stanford in NY 915 Broadway). Online sessions present but not individually enumerated."
       },
       {
         "source": "mit-sloan-fellows",
@@ -1436,15 +1523,15 @@
         "requiredMethod": "render-required",
         "status": "ok_events",
         "eventsFound": 1,
-        "evidence": "WebFetch rendered; re-confirmed 6/23 SFMBA virtual info session (mba-online). Cambridge visit programs excluded (not NYC/online)."
+        "evidence": "WebFetch rendered the listing. No NYC in-person; 6/23 Virtual Info Session re-confirmed (mba-online). Other events are Cambridge/Paris."
       },
       {
         "source": "insead-mba",
         "url": "https://www.insead.edu/events/listing?field_categories%5B0%5D=master_programmes&field_event_programme%5B0%5D=mba",
         "requiredMethod": "render-required",
         "status": "ok_events",
-        "eventsFound": 3,
-        "evidence": "WebFetch rendered listing; re-confirmed 3 online English MBA webinars in window (6/22, 6/24, 7/9). Paris/Fontainebleau/Singapore/Sydney in-person sessions excluded (not NYC)."
+        "eventsFound": 4,
+        "evidence": "WebFetch rendered the listing. No NYC in-person (in-person events are Fontainebleau/Singapore/Sydney/Chicago). 3 online webinars re-confirmed + 1 new (Spotlight on France 6/25). Mandarin session excluded."
       },
       {
         "source": "kellogg",
@@ -1452,7 +1539,7 @@
         "requiredMethod": "render-required",
         "status": "ok_events",
         "eventsFound": 0,
-        "evidence": "WebFetch rendered preview; only a Full-Time MBA alumni panel in Manila (not NYC) found. No NYC in-person or online Full-Time/One-Year MBA event in window."
+        "evidence": "WebFetch rendered the listing; only Manila alumni panel, Evanston Evening&Weekend, and Executive virtual shown — none qualify (no NYC Full-Time/One-Year MBA)."
       }
     ]
   }
